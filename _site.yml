@@ -1,0 +1,10 @@
+name: "Lucas Veras"
+output_dir: "."
+navbar:
+  title: "Lucas Veras"
+  
+
+output:
+  html_document:
+    theme: paper
+    css: 'styles.css'
