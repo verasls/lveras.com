@@ -1,6 +1,11 @@
 ---
+output: 
+  html_document:
+    includes:
+      in_header: "favicon.html"
 ---
-<link rel="shortcut icon" href="images/favicon.png">
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="stylesheet" href="styles.css" type="text/css">
 <br/>
 
 <img src="images/lveras_logo.png" align="center">

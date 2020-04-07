@@ -1,8 +1,14 @@
 ---
 title: Selected publications
+output: 
+  html_document:
+    includes:
+      in_header: "favicon.html"
 ---
 
 If you are interested in my complete CV, it can be visualized [here](CV/CV_Lucas_Veras.pdf).
+
+<br>
 
 ## Peer reviewed articles
 
