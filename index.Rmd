@@ -1,5 +1,6 @@
 ---
 ---
+<link rel="shortcut icon" href="images/favicon.png">
 <br/>
 
 <img src="images/lveras_logo.png" align="center">
