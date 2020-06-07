@@ -1,4 +1,6 @@
 ---
+title: ""  
+pagetitle: "Lucas Veras"
 output: 
   html_document:
     includes:

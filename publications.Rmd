@@ -1,10 +1,14 @@
 ---
-title: Selected publications
+title: ""  
+pagetitle: "Lucas Veras"
 output: 
   html_document:
     includes:
       in_header: "favicon.html"
 ---
+<br>
+
+# Selected publications
 
 If you are interested in my complete CV, it can be visualized [here](CV/CV_Lucas_Veras.pdf).
 

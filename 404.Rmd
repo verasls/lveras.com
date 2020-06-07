@@ -1,8 +1,8 @@
 ---
+title: "404"  
+pagetitle: "Lucas Veras"
 ---
 <br/>
-
-#404
 
 Sorry, the page is not here. It's probably my mistake.
 
