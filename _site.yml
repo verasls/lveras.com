@@ -5,7 +5,7 @@ navbar:
   left:
     - text: "Publications"
       href: publications.html
-    - text: "Softwarwe"
+    - text: "Software"
       href: software.html
   right:
     - icon: fa-envelope fa-lg
