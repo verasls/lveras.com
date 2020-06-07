@@ -35,4 +35,5 @@ Gait and Posture, 2020.
 Calibration and validation of accelerometers: Establishing new equations for energy expenditure and ground reaction force prediction.<br>
 Master’s Thesis
 <br>
-<a href="https://repositorio-aberto.up.pt/bitstream/10216/124941/2/371866.pdf"><img src="icons/pdf_icon.png" align="left" style="padding:0px 5px 0px 0px;"></a> 
+<a href="https://repositorio-aberto.up.pt/bitstream/10216/124941/2/371866.pdf"><img src="icons/pdf_icon.png" align="left" style="padding:0px 5px 0px 0px;"></a>
+<a href="https://github.com/verasls/MSc_dissertation"><img src="icons/github_icon.png" align="left" style="padding:0px 5px 0px 0px;"></a>
