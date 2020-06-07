@@ -316,9 +316,51 @@ $(document).ready(function () {
 
 
 <p><link rel="shortcut icon" href="images/favicon.ico"> <link rel="stylesheet" href="styles.css" type="text/css"> <br/></p>
-<p><img src="images/lveras_logo.png" align="center"></p>
-<p>Page under construction…</p>
-<p>… please, visit later</p>
+<style>
+.column-left{
+  float: left;
+  width: 50%;
+  text-align: left;
+}
+.column-right{
+  float: right;
+  width: 40%;
+  text-align: right;
+}
+</style>
+<div class="column-left">
+<pre class="r"><code>library(ggplot2)
+library(waffle)
+
+logo &lt;- data.frame(
+  column =  1:4,
+  n = c(4, 3, 2, 1)
+)
+
+ggplot(
+  data = logo, aes(fill = column, values = n)
+) +
+  geom_waffle(
+    n_rows = 1, size = 1, 
+    colour = &quot;white&quot;, flip = TRUE, 
+    show.legend = FALSE
+  ) +
+  facet_wrap(~ column, nrow = 1) +
+  scale_fill_manual(
+    values = c(
+      &quot;#202859&quot;, &quot;#2E4F6C&quot;, &quot;#3D6991&quot;, &quot;#3D6991&quot;
+    )
+  ) +
+  theme_void() +
+  theme(
+    strip.background = element_blank(),
+    strip.text.x = element_blank(),
+    panel.spacing = unit(0.001, &quot;lines&quot;)
+  )</code></pre>
+</div>
+<div class="column-right">
+<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" width="672" /> <img src="images/lveras_name.png" /></p>
+</div>
 
 
 
