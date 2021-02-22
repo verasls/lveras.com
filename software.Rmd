@@ -10,7 +10,7 @@ output:
 
 ## R packages
 
-- [`lvmisc`](https://lveras.com/lvmisc): a package with miscellaneous R functions (currently under development).
+- [`lvmisc`](https://lveras.com/lvmisc): a package with miscellaneous R functions.
 
 <br>
 
