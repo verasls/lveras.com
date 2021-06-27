@@ -6,15 +6,34 @@ output:
     includes:
       in_header: "favicon.html"
 ---
-<br>
-
-# Selected publications
-
-If you are interested in my complete CV, it can be visualized [here](CV/CV_Lucas_Veras.pdf).
 
 <br>
 
 ## Peer reviewed articles
+
+Can exercise promote additional benefits on body composition in patients with obesity after bariatric surgery? A systematic review and meta‐analysis of Randomized Controlled Trials.<br>
+Boppre G, Diniz-Sousa F, **Veras L**, Oliveira J, Fonseca H.
+*Obesity Science & Practice*, 2021.
+<br>
+<a href="https://doi.org/10.1002/osp4.542"><img src="icons/doi_icon.png" align="left" style="padding:0px 5px 0px 0px;"></a> 
+<br>
+
+How Does Bariatric Surgery Affect Fall Risk Factors?<br>
+Diniz-Sousa F, **Veras L**, Boppre G, Devezas V, Santos-Sousa H, Preto J, Machado L, Vilas- Boas JP, Oliveira J, Fonseca H.<br>
+*Obesity Surgery*, 2021.
+<br>
+<a href="http://dx.doi.org/10.1007/s11695-021-05400-2"><img src="icons/doi_icon.png" align="left" style="padding:0px 5px 0px 0px;"></a> 
+<a href="https://pubmed.ncbi.nlm.nih.gov/33797733/"><img src="icons/pubmed_icon.png" align="left" style="padding:0px 5px 0px 0px;"></a> 
+<a href="https://github.com/verasls/BaSEIB_BS_balance"><img src="icons/github_icon.png" align="left" style="padding:0px 5px 0px 0px;"></a>
+<br>
+
+Wearable Devices for Physical Activity and Healthcare Monitoring in Elderly People: A Critical Review.<br>
+Teixeira E, Fonseca H, Diniz-Sousa F, **Veras L**, Boppre G, Oliveira J, Pinto D, Alves AJ, Barbosa A, Mendes R, Marques-Aleixo I.<br>
+*Geriatrics*, 2021.
+<br>
+<a href="https://doi.org/10.3390/geriatrics6020038"><img src="icons/doi_icon.png" align="left" style="padding:0px 5px 0px 0px;"></a>
+<a href="https://pubmed.ncbi.nlm.nih.gov/33917104/"><img src="icons/pubmed_icon.png" align="left" style="padding:0px 5px 0px 0px;"></a>
+<br>
 
 The Effect of an Exercise Intervention Program on Bone Health After Bariatric Surgery: A Randomized Controlled Trial.<br>
 Diniz-Sousa F, **Veras L**, Boppre G, Sa-Couto P, Devezas V, Santos-Sousa H, Preto J, Machado L, Vilas- Boas JP, Oliveira J, Fonseca H.<br>
