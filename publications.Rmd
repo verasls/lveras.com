@@ -41,7 +41,7 @@ Diniz-Sousa F, **Veras L**, Boppre G, Sa-Couto P, Devezas V, Santos-Sousa H, Pre
 <br>
 <a href="http://dx.doi.org/10.1002/jbmr.4213"><img src="icons/doi_icon.png" align="left" style="padding:0px 5px 0px 0px;"></a> 
 <a href="https://pubmed.ncbi.nlm.nih.gov/33295063/"><img src="icons/pubmed_icon.png" align="left" style="padding:0px 5px 0px 0px;"></a> 
-<a href="https://github.com/verasls/BaSEIB_bariatric_surgery_bone_health"><img src="icons/github_icon.png" align="left" style="padding:0px 5px 0px 0px;"></a>
+<a href="https://github.com/verasls/BaSEIB_exercise_bone_health"><img src="icons/github_icon.png" align="left" style="padding:0px 5px 0px 0px;"></a>
 <br>
 
 Accelerometer-based prediction of skeletal mechanical loading during walking in normal weight to severely obese subjects.<br>
