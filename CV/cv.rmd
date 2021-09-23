@@ -90,9 +90,9 @@ Disclaimer {#disclaimer}
 
 ```{r}
 if(params$pdf_mode){
-  cat("View this CV online at _nickstrayer.me/datadrivencv/_")
+  cat("View this CV [online](https://lveras.com/CV/lv_cv.html)")
 } else {
-  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/nstrayer/cv/raw/master/strayer_cv.pdf)")
+  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/verasls/verasls.github.io/raw/master/CV/lv_cv.pdf)")
 }
 ```
 
