@@ -9,6 +9,8 @@ output:
   pagedown::html_resume:
     css: ['dd_cv.css', 'resume']
     self_contained: true
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r, include=FALSE}
@@ -30,7 +32,8 @@ CV <- create_CV_object(
 
 
 ```{r}
-# When in pdf export mode the little dots are unaligned, so fix that with some conditional CSS.
+# When in pdf export mode the little dots are unaligned, so fix that with
+# some conditional CSS.
 if(params$pdf_mode) {
     cat("
 <style>
@@ -43,162 +46,98 @@ if(params$pdf_mode) {
 
 
 Aside
-================================================================================
-
-```{r}
-# Build interactive network of positions colored by section
-# and connected if they occurred in the same year
-datadrivencv::build_network_logo(CV$entries_data)
-```
-
-
-```{r}
-if(params$pdf_mode){
-  cat("View this CV online with links at _nickstrayer.me/datadrivencv/_")
-} else {
-  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/nstrayer/cv/raw/master/strayer_cv.pdf)")
-}
-```
+===========================================================================
 
 Contact {#contact}
---------------------------------------------------------------------------------
+---------------------------------------------------------------------------
 
 ```{r}
 CV %>% print_contact_info()
 ```
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-
-Language Skills {#skills}
---------------------------------------------------------------------------------
+Programming skills {#skills}
+---------------------------------------------------------------------------
 
 ```{r}
 CV %>% print_skill_bars()
 ```
 
 
-
 Disclaimer {#disclaimer}
---------------------------------------------------------------------------------
+---------------------------------------------------------------------------
 
-Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). 
+```{r}
+if(params$pdf_mode){
+  cat("View this CV online at _nickstrayer.me/datadrivencv/_")
+} else {
+  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/nstrayer/cv/raw/master/strayer_cv.pdf)")
+}
+```
 
-The source code is available [on github.com/nstrayer/cv](https://github.com/nstrayer/datadrivencv).
+The source code is available on [GitHub](https://github.com/verasls/verasls.github.io/tree/master/CV).
 
 Last updated on `r Sys.Date()`.
 
 
-
 Main
-================================================================================
+===========================================================================
 
 Lucas Veras {#title}
---------------------------------------------------------------------------------
+---------------------------------------------------------------------------
 
 ```{r}
 # Note the special double pipe so we modify the CV object in place
-CV %<>% print_text_block("intro") 
+# Uncomment the line below if you want to add an intro text at the
+# beginning of the CV
+# CV %<>% print_text_block("intro") 
 ```
 
-
-
 Education {data-icon=graduation-cap data-concise=true}
---------------------------------------------------------------------------------
+---------------------------------------------------------------------------
 
 ```{r}
 CV %<>% print_section('education')
 ```
 
-
-
-Research Experience {data-icon=laptop}
---------------------------------------------------------------------------------
+Papers {data-icon=file-alt data-concise=true}
+---------------------------------------------------------------------------
 
 ```{r}
-CV %<>% print_section('research_positions')
+CV %<>% print_section('papers')
 ```
 
-
-
-Industry Experience {data-icon=suitcase}
---------------------------------------------------------------------------------
-
-::: aside
-```{r}
-CV %<>% print_text_block('industy_experience_aside')
-```
-:::
+Conference proceedings {data-icon=chalkboard data-concise=true}
+---------------------------------------------------------------------------
 
 ```{r}
-CV %<>% print_section('industry_positions')
+CV %<>% print_section('conference')
 ```
 
-<!-- These breaks just force a new page so section doesnt get cut off -->
-<br>
-<br>
-<br>
-
-Teaching Experience {data-icon=chalkboard-teacher}
---------------------------------------------------------------------------------
-
-::: aside
-```{r}
-CV %<>% print_text_block('teaching_experience_aside')
-```
-:::
+Awards {data-icon=award data-concise=true}
+---------------------------------------------------------------------------
 
 ```{r}
-CV %<>% print_section('teaching_positions')
+CV %<>% print_section('awards')
 ```
-
-
-
-Selected Data Science Writing {data-icon=chart-line}
---------------------------------------------------------------------------------
-
-::: aside
-```{r}
-CV %<>% print_text_block('data_science_writing_aside')
-```
-:::
-
-```{r}
-CV %<>% print_section('data_science_writings')
-```
-
-
-
-Selected Press (About)  {data-icon=newspaper}
---------------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section('about_me_press')
-```
-
-
-<br>
-<br>
-
-
-Selected Press (By)  {data-icon=newspaper}
---------------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section('by_me_press')
-```
-
-
-
-Selected Publications, Posters, and Talks {data-icon=book}
---------------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section('academic_articles')
-```
-
-
-
-```{r}
-CV %<>% print_links()
-```
-
