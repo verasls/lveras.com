@@ -7,6 +7,8 @@ navbar:
       href: publications.html
     - text: "Software"
       href: software.html
+    - text: "CV"
+      href: CV/lv_cv.html
   right:
     - icon: fas fa-envelope fa-lg
       href: contact.html
