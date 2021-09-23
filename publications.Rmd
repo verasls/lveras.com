@@ -11,8 +11,17 @@ output:
 
 ## Peer reviewed articles
 
+The effect of bariatric surgery on gravitational loading and its impact on bone mass.<br>
+Diniz-Sousa F, **Veras L**, Boppre G, Devezas V, Santos-Sousa H, Preto J, Machado L, Vilas- Boas JP, Oliveira J, Fonseca H.<br>
+*Bone*, 2021.
+<br>
+<a href="http://dx.doi.org/10.1016/j.bone.2021.116153"><img src="icons/doi_icon.png" align="left" style="padding:0px 5px 0px 0px;"></a> 
+<a href="https://pubmed.ncbi.nlm.nih.gov/34416407/"><img src="icons/pubmed_icon.png" align="left" style="padding:0px 5px 0px 0px;"></a> 
+<a href="https://github.com/verasls/BaSEIB_bariatric_surgery_bone_health"><img src="icons/github_icon.png" align="left" style="padding:0px 5px 0px 0px;"></a>
+<br>
+
 Can exercise promote additional benefits on body composition in patients with obesity after bariatric surgery? A systematic review and meta‐analysis of Randomized Controlled Trials.<br>
-Boppre G, Diniz-Sousa F, **Veras L**, Oliveira J, Fonseca H.
+Boppre G, Diniz-Sousa F, **Veras L**, Oliveira J, Fonseca H.<br>
 *Obesity Science & Practice*, 2021.
 <br>
 <a href="https://doi.org/10.1002/osp4.542"><img src="icons/doi_icon.png" align="left" style="padding:0px 5px 0px 0px;"></a> 
