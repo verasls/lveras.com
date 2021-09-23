@@ -34,7 +34,7 @@ CV <- create_CV_object(
 ```{r}
 # When in pdf export mode the little dots are unaligned, so fix that with
 # some conditional CSS.
-if(params$pdf_mode) {
+if (params$pdf_mode) {
     cat("
 <style>
 :root{
@@ -118,26 +118,26 @@ Education {data-icon=graduation-cap data-concise=true}
 ---------------------------------------------------------------------------
 
 ```{r}
-CV %<>% print_section('education')
+CV %<>% print_section("education")
 ```
 
 Papers {data-icon=file-alt data-concise=true}
 ---------------------------------------------------------------------------
 
 ```{r}
-CV %<>% print_section('papers')
+CV %<>% print_section("papers")
 ```
 
 Conference proceedings {data-icon=chalkboard data-concise=true}
 ---------------------------------------------------------------------------
 
 ```{r}
-CV %<>% print_section('conference')
+CV %<>% print_section("conference")
 ```
 
 Awards {data-icon=award data-concise=true}
 ---------------------------------------------------------------------------
 
 ```{r}
-CV %<>% print_section('awards')
+CV %<>% print_section("awards")
 ```
