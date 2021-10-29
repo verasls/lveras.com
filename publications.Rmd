@@ -9,6 +9,10 @@ output:
 
 <br>
 
+To view my complete CV, click on this [link](CV/lv_cv.html).
+
+<br>
+
 ## Peer reviewed articles
 
 The effect of bariatric surgery on gravitational loading and its impact on bone mass.<br>

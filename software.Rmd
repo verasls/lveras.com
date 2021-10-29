@@ -11,7 +11,7 @@ output:
 ## R packages
 
 - [`lvmisc`](https://lveras.com/lvmisc): a package with miscellaneous R functions.
-- [`impactr`](https://github.com/verasls/impactr): mechanical loading prediction through accelerometer data (currently under development)
+- [`impactr`](https://github.com/verasls/impactr): mechanical loading prediction through accelerometer data.
 
 <br>
 
