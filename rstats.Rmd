@@ -1,0 +1,16 @@
+---
+title: ""  
+pagetitle: "Lucas Veras"
+output: 
+  html_document:
+    includes:
+      in_header: "favicon.html"
+---
+
+<br>
+
+## R stats tutorials
+
+<br>
+
+* [00: Intro to R](https://lveras.com/tutorials/rstats/00_intro_R/slides.html)

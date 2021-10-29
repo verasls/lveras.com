@@ -11,7 +11,7 @@ output:
 
 ## Tutorials
 
-* Statistics with R (coming soon)
+* [Statistics with R](rstats.html)
 
 ---
 
