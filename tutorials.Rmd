@@ -1,0 +1,34 @@
+---
+title: ""  
+pagetitle: "Lucas Veras"
+output: 
+  html_document:
+    includes:
+      in_header: "favicon.html"
+---
+
+<br>
+
+## Tutorials
+
+* Statistics with R (coming soon)
+
+---
+
+## Suggested readings
+
+### Books
+
+* [R for Data Science](https://r4ds.had.co.nz) (by Hadley Wickham & Garrett Grolemund): a really useful book for learning data science skills in R.
+* [Advanced R](https://adv-r.hadley.nz) (by Hadley Wickham): advanced topics about programming with R.
+* [R Packages](https://r-pkgs.org) (by Hadley Wickham & Jenny Bryan): a must-read if you are planning to develop an R package.
+* [Discovering Statistics Using R](https://www.discoveringstatistics.com/books/discovering-statistics-using-r/) (by Andy Field, Jeremy Miles & Zoë Field): basic statistical concepts with applications in R.
+* [An Introduction to Statistical Learning](https://www.statlearning.com) (by Gareth James, Daniela Witten, Trevor Hastie & Robert Tibshirani) : a more advanced book on statistical methods.
+* [Statistical Computing with R](https://www.routledge.com/Statistical-Computing-with-R-Second-Edition/Rizzo/p/book/9781466553323) (by Maria L. Rizzo): computational statistics tools and numerical methods.
+* [Data Visualization: A Practical Introduction](https://socviz.co) (by Kieran Healy): learn to make informative and beautiful visualizations with R.
+
+### Websites/Blogs
+* [The R Graph Gallery](https://www.r-graph-gallery.com): help and inspiration for R charts.
+* [Karl Broman's website](https://kbroman.org): you can find some helpful content, particularly on the tutorials page.
+* [Scientist Sees Squirrel](https://scientistseessquirrel.wordpress.com): great posts about scientific writing and some other stuff.
+* [Brushing Up Science](https://brushingupscience.com): everything about presenting science: figures, fonts, typesetting, symbols, talks, posters, etc.
