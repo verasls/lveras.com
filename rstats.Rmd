@@ -13,4 +13,4 @@ output:
 
 <br>
 
-* [00: Introduction](https://lveras.com/tutorials/rstats/00_intro_R/slides.html)
+* [00: Introduction](https://lveras.com/tutorials/rstats/00_introduction/slides.html)
