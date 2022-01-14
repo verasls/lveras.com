@@ -11,7 +11,9 @@ output:
 ## R packages
 
 - [`lvmisc`](https://lveras.com/lvmisc): a package with miscellaneous R functions.
-- [`impactr`](https://lveras.com/impactr): mechanical loading prediction through accelerometer data.
+- [`impactr`](https://lveras.com/impactr): a package focues on mechanical loading prediction through accelerometer data.
+- [`accdata`](https://github.com/verasls/accdata): a data package with accelerometry physical activity datasets to be used with the `impactr` package.
+- [`drat`](https://lveras.com/drat): a drat repository. [What is it?](https://github.com/eddelbuettel/drat)
 
 <br>
 
