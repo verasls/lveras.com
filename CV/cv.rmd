@@ -1,143 +1,101 @@
 ---
-title: "Lucas Veras's CV"
 author: Lucas Veras
 date: "`r Sys.Date()`"
-params:
-  pdf_mode:
-    value: true
 output:
-  pagedown::html_resume:
-    css: ['dd_cv.css', 'resume']
-    self_contained: true
-editor_options: 
-  chunk_output_type: console
+  pdf_document:
+    includes:
+      in_header: columns.tex
+header-includes:
+   - \usepackage{fullpage}
+   - \usepackage{sourcesanspro}
+   - \usepackage{sectsty}
+   - \usepackage{fontawesome5}
+   - \usepackage{hyperref}
+   - \definecolor{dark-gray}{RGB}{68, 68, 68}
+   - \definecolor{light-gray}{gray}{0.35}
+   - \usepackage{fancyhdr}
+   - \usepackage{lastpage}
+   - \pagestyle{fancy}
+   - \cfoot{\thepage\ / \pageref{LastPage}}
+   - \renewcommand{\headrulewidth}{0pt}
 ---
 
-```{r, include=FALSE}
-knitr::opts_chunk$set(
-  results='asis', 
-  echo = FALSE
-)
+```{r, include = FALSE}
+knitr::opts_chunk$set(results = "asis", echo = FALSE)
 
-library(magrittr) # For the pipe
-source("cv_printing_functions.r")
+source("cv_printing_functions.R")
 
 # Read in all data and initialize a CV printer object
-CV <- create_CV_object(
-  data_location = "https://docs.google.com/spreadsheets/d/1lmTkQPjWL7ZVcTD2nIzMpnMSFe14XAe-Njb3PN3smcQ/edit#gid=917338460",  
-  pdf_mode = params$pdf_mode
+cv <- create_CV_object(
+  data_location = "https://docs.google.com/spreadsheets/d/1lmTkQPjWL7ZVcTD2nIzMpnMSFe14XAe-Njb3PN3smcQ/edit#gid=917338460",
+  pdf_mode = "true"
 )
 
 ```
 
+\begin{tabular*}{\textwidth}{@{}p{.45\textwidth}@{\extracolsep{\fill}}r@{}}
+\raggedright
+\begin{LARGE}
+\textbf{Lucas Veras} \\
+\end{LARGE}
+\vspace{2.5em}
+\begin{Large}
+\textbf{\textit{Curriculum Vitae}}
+\end{Large}
+&
+\begin{tabular}[t]{ r@{}}
+```{r echo = FALSE, results = 'asis'}
+contact_info <- print_contact_info(cv)
+cat(contact_info)
+```
+\end{tabular}
+\end{tabular*}
+
+\rule{\linewidth}{0.8pt}
+
+\vspace{1.5em}
+
+\begin{Large}
+\textcolor{dark-gray}{\faIcon{graduation-cap}} \textbf{Education}
+\end{Large}
 
 ```{r}
-# When in pdf export mode the little dots are unaligned, so fix that with
-# some conditional CSS.
-if (params$pdf_mode) {
-    cat("
-<style>
-:root{
-  --decorator-outer-offset-left: -6.5px;
-}
-</style>")
-}
+edu <- print_education(cv)
+cat(edu)
 ```
 
+\vspace{1.5em}
 
-Aside
-===========================================================================
-
-Contact {#contact}
----------------------------------------------------------------------------
+\begin{Large}
+\textcolor{dark-gray}{\faIcon{award}} \textbf{Awards}
+\end{Large}
 
 ```{r}
-CV %>% print_contact_info()
+awards <- print_awards(cv)
+cat(awards)
 ```
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+\vspace{1.5em}
 
-Programming skills {#skills}
----------------------------------------------------------------------------
+\begin{Large}
+\textcolor{dark-gray}{\faIcon{file-alt}} \textbf{Papers}
+\end{Large}
 
 ```{r}
-CV %>% print_skill_bars()
+papers <- print_papers(cv)
+cat(papers)
 ```
 
+\vspace{1.5em}
 
-Disclaimer {#disclaimer}
----------------------------------------------------------------------------
+\begin{Large}
+\textcolor{dark-gray}{\faIcon{chalkboard}} \textbf{Conference publications}
+\end{Large}
 
 ```{r}
-if(params$pdf_mode){
-  cat("View this CV [online](https://lveras.com/CV/lv_cv.html)")
-} else {
-  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/verasls/verasls.github.io/raw/master/CV/lv_cv.pdf)")
-}
+conference <- print_conference(cv)
+cat(conference)
 ```
 
-The source code is available on [GitHub](https://github.com/verasls/verasls.github.io/tree/master/CV).
-
-Last updated on `r Sys.Date()`.
-
-
-Main
-===========================================================================
-
-Lucas Veras {#title}
----------------------------------------------------------------------------
-
-```{r}
-# Note the special double pipe so we modify the CV object in place
-# Uncomment the line below if you want to add an intro text at the
-# beginning of the CV
-# CV %<>% print_text_block("intro") 
-```
-
-Education {data-icon=graduation-cap data-concise=true}
----------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section("education")
-```
-
-Papers {data-icon=file-alt data-concise=true}
----------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section("papers")
-```
-
-Conference proceedings {data-icon=chalkboard data-concise=true}
----------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section("conference")
-```
-
-Awards {data-icon=award data-concise=true}
----------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section("awards")
-```
+\vspace*{\fill}
+\flushright \footnotesize Last updated on `r Sys.Date()`

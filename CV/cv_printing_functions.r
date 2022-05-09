@@ -87,36 +87,6 @@ create_CV_object <- function(data_location,
       lubridate::dmy()
   }
 
-  # Clean up entries dataframe to format we need it for printing
-  cv$entries_data %<>%
-    tidyr::unite(
-      tidyr::starts_with("description"),
-      col = "description_bullets",
-      sep = "\n- ",
-      na.rm = TRUE
-    ) %>%
-    dplyr::mutate(
-      description_bullets = ifelse(
-        description_bullets != "", paste0("- ", description_bullets), ""
-      ),
-      start = ifelse(start == "NULL", NA, start),
-      end = ifelse(end == "NULL", NA, end),
-      start_year = extract_year(start),
-      end_year = extract_year(end),
-      no_start = is.na(start),
-      has_start = !no_start,
-      no_end = is.na(end),
-      has_end = !no_end,
-      timeline = dplyr::case_when(
-        no_start  & no_end  ~ "N/A",
-        no_start  & has_end ~ as.character(end),
-        has_start & no_end  ~ paste("Current", "-", start),
-        TRUE                ~ paste(end, "-", start)
-      )
-    ) %>%
-    dplyr::arrange(desc(parse_dates(end))) %>%
-    dplyr::mutate_all(~ ifelse(is.na(.), "N/A", .))
-
   cv
 }
 
@@ -259,8 +229,135 @@ Links {data-icon=link}
 print_contact_info <- function(cv) {
   glue::glue_data(
     cv$contact_info,
-    "- <i class='fa fa-{icon}'></i> {contact}"
-  ) %>% print()
+    "<contact> \\textcolor{dark-gray}{\\faIcon{<icon>}} \\\\ ",
+    .open = "<", .close = ">"
+  )
+}
 
-  invisible(cv)
+#' @description Education section
+print_education <- function(cv) {
+  d <- dplyr::filter(cv$entries_data, section == "education")
+  edu <- glue::glue_data(
+    d,
+    "
+
+     \\vspace{0.3em}
+
+     \\begin{cols}
+     \\begin{col}{0.15\\textwidth}
+     \\flushright \\textcolor{light-gray}{<start> - <end>}
+     \\end{col}
+     \\begin{col}{0.02\\textwidth}
+     \\textcolor{white}{x}
+     \\end{col}
+     \\begin{col}{0.83\\textwidth}
+     \\textbf{<title>}, <institution>
+
+     \\textcolor{dark-gray}{\\faIcon{map-marker-alt}} <loc>
+
+     \\noindent \\small • <description_1>
+     \\end{col}
+     \\end{cols}
+
+     ",
+    .open = "<", .close = ">"
+  )
+
+  # Remove the description if no description is provided
+  if (any(is.na(d$description_1))) {
+    na <- which(is.na(d$description_1))
+  }
+  for (i in na) {
+    to_sub <- stringr::str_locate(edu[[i]], "NA")[[1]] - 19
+    substr(edu[[i]], to_sub, to_sub) <- "%"
+  }
+  edu
+}
+
+#' @description Awards section
+print_awards <- function(cv) {
+  d <- dplyr::filter(cv$entries_data, section == "awards")
+  glue::glue_data(
+    d,
+    "
+
+     \\vspace{0.3em}
+
+     \\begin{cols}
+     \\begin{col}{0.15\\textwidth}
+     \\flushright \\textcolor{light-gray}{<end>}
+     \\end{col}
+     \\begin{col}{0.02\\textwidth}
+     \\textcolor{white}{x}
+     \\end{col}
+     \\begin{col}{0.83\\textwidth}
+     \\textbf{<title>}, <loc>
+     \\end{col}
+     \\end{cols}
+
+     ",
+    .open = "<", .close = ">"
+  )
+}
+
+#' @description Papers section
+print_papers <- function(cv) {
+  d <- dplyr::filter(cv$entries_data, section == "papers")
+  glue::glue_data(
+    d,
+    "
+
+     \\vspace{0.3em}
+
+     \\begin{cols}
+     \\begin{col}{0.15\\textwidth}
+     \\flushright \\textcolor{light-gray}{<end>}
+     \\end{col}
+     \\begin{col}{0.02\\textwidth}
+     \\textcolor{white}{x}
+     \\end{col}
+     \\begin{col}{0.83\\textwidth}
+     \\textbf{<title>}.
+
+     \\textit{<loc>}
+
+     <description_1>
+     \\end{col}
+     \\end{cols}
+
+     ",
+    .open = "<", .close = ">"
+  )
+}
+
+#' @description Conference section
+print_conference <- function(cv) {
+  d <- dplyr::filter(cv$entries_data, section == "conference")
+  glue::glue_data(
+    d,
+    "
+
+     \\vspace{0.3em}
+
+     \\begin{cols}
+     \\begin{col}{0.15\\textwidth}
+     \\flushright \\textcolor{light-gray}{<end>}
+     \\end{col}
+     \\begin{col}{0.02\\textwidth}
+     \\textcolor{white}{x}
+     \\end{col}
+     \\begin{col}{0.83\\textwidth}
+     \\textbf{<title>}.
+
+     <loc>
+
+     \\textcolor{dark-gray}{\\faIcon{map-marker-alt}} <institution>
+
+     <description_1>
+     \\end{col}
+     \\end{cols}
+
+     ",
+    .open = "<", .close = ">"
+  )
 }
