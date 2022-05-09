@@ -9,7 +9,7 @@ output:
 
 <br>
 
-To view my complete CV, click on this [link](CV/lv_cv.html).
+To view my complete CV, click on this [link](CV/cv.pdf).
 
 <br>
 
