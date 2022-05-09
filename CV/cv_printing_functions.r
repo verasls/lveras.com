@@ -330,6 +330,38 @@ print_papers <- function(cv) {
   )
 }
 
+#' @description Books section
+print_books <- function(cv) {
+  d <- dplyr::filter(cv$entries_data, section == "books")
+  glue::glue_data(
+    d,
+    "
+
+     \\vspace{0.3em}
+
+     \\begin{cols}
+     \\begin{col}{0.15\\textwidth}
+     \\flushright \\textcolor{light-gray}{<end>}
+     \\end{col}
+     \\begin{col}{0.02\\textwidth}
+     \\textcolor{white}{x}
+     \\end{col}
+     \\begin{col}{0.83\\textwidth}
+     \\textbf{<title>}.
+
+     <loc>
+
+     \\textit{<institution>}
+
+     <description_1>
+     \\end{col}
+     \\end{cols}
+
+     ",
+    .open = "<", .close = ">"
+  )
+}
+
 #' @description Conference section
 print_conference <- function(cv) {
   d <- dplyr::filter(cv$entries_data, section == "conference")
@@ -354,6 +386,32 @@ print_conference <- function(cv) {
      \\textcolor{dark-gray}{\\faIcon{map-marker-alt}} <institution>
 
      <description_1>
+     \\end{col}
+     \\end{cols}
+
+     ",
+    .open = "<", .close = ">"
+  )
+}
+
+#' @description Reviews section
+print_review <- function(cv) {
+  d <- dplyr::filter(cv$entries_data, section == "review")
+  glue::glue_data(
+    d,
+    "
+
+     \\vspace{0.3em}
+
+     \\begin{cols}
+     \\begin{col}{0.15\\textwidth}
+     \\textcolor{white}{x}
+     \\end{col}
+     \\begin{col}{0.02\\textwidth}
+     \\textcolor{white}{x}
+     \\end{col}
+     \\begin{col}{0.83\\textwidth}
+     • <title>
      \\end{col}
      \\end{cols}
 

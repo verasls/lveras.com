@@ -89,12 +89,34 @@ cat(papers)
 \vspace{1.5em}
 
 \begin{Large}
+\textcolor{dark-gray}{\faIcon{book}} \textbf{Book chapters}
+\end{Large}
+
+```{r}
+books <- print_books(cv)
+cat(books)
+```
+
+\vspace{1.5em}
+
+\begin{Large}
 \textcolor{dark-gray}{\faIcon{chalkboard}} \textbf{Conference publications}
 \end{Large}
 
 ```{r}
 conference <- print_conference(cv)
 cat(conference)
+```
+
+\vspace{1.5em}
+
+\begin{Large}
+\textcolor{dark-gray}{\faIcon{file-signature}} \textbf{Reviews for journals}
+\end{Large}
+
+```{r}
+review <- print_review(cv)
+cat(review)
 ```
 
 \vspace*{\fill}
