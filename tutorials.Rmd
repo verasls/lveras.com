@@ -13,6 +13,12 @@ output:
 
 * [Statistics with R](rstats.html)
 
+<br>
+
+## Other presentations
+
+* [Analysis of longitudinal data using linear mixed models](https://lveras.com/tutorials/lmm/slides.html)
+
 ---
 
 ## Suggested readings
