@@ -1,4 +1,4 @@
-## make     : Renders pdf and html version of my CV
+## make     : Renders pdf version of my CV
 cv.pdf: cv.Rmd cv_printing_functions.R columns.tex
 	Rscript -e 'rmarkdown::render("$<")'
 
