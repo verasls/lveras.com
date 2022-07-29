@@ -13,7 +13,7 @@
 
 <title>Lucas Veras</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -60,6 +60,7 @@ if (window.hljs) {
 
 
 
+
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
 
@@ -84,6 +85,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -236,7 +240,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -291,26 +295,48 @@ $(document).ready(function () {
 <div id="r-packages" class="section level2">
 <h2>R packages</h2>
 <ul>
-<li><a href="https://lveras.com/lvmisc"><code>lvmisc</code></a>: a package with miscellaneous R functions.</li>
-<li><a href="https://lveras.com/impactr"><code>impactr</code></a>: a package focues on mechanical loading prediction through accelerometer data.</li>
-<li><a href="https://github.com/verasls/accdata"><code>accdata</code></a>: a data package with accelerometry physical activity datasets to be used with the <code>impactr</code> package.</li>
-<li><a href="https://lveras.com/drat"><code>drat</code></a>: a drat repository. <a href="https://github.com/eddelbuettel/drat">What is it?</a></li>
+<li><a href="https://lveras.com/lvmisc"><code>lvmisc</code></a>: a
+package with miscellaneous R functions.</li>
+<li><a href="https://lveras.com/impactr"><code>impactr</code></a>: a
+package focues on mechanical loading prediction through accelerometer
+data.</li>
+<li><a
+href="https://github.com/verasls/accdata"><code>accdata</code></a>: a
+data package with accelerometry physical activity datasets to be used
+with the <code>impactr</code> package.</li>
+<li><a href="https://lveras.com/drat"><code>drat</code></a>: a drat
+repository. <a href="https://github.com/eddelbuettel/drat">What is
+it?</a></li>
 </ul>
 <p><br></p>
 </div>
 <div id="data-analysis-for-scientific-papers" class="section level2">
 <h2>Data analysis for scientific papers</h2>
 <ul>
-<li>Data analysis code for my published scientific papers can be found in the Github links on the <a href="https://lveras.com/publications.html">Publications</a> section.</li>
+<li>Data analysis code for my published scientific papers can be found
+in the Github links on the <a
+href="https://lveras.com/publications.html">Publications</a>
+section.</li>
 </ul>
 <p><br></p>
 </div>
 <div id="other" class="section level2">
 <h2>Other</h2>
 <ul>
-<li><p><a href="https://github.com/verasls/sync_GRF_ACC"><code>sync_GRF_ACC</code></a>: MATLAB code to synchronize force platforms and accelerometers signals on various jumping trials.</p></li>
-<li><p><a href="https://github.com/verasls/daily_GRF"><code>daily_GRF</code></a>: Python/R code to predict ground reaction forces based on daily living raw acceleration data using methods described by <a href="https://link.springer.com/article/10.1007/s00198-020-05295-2">Veras et al. 2020</a>.</p></li>
-<li><p><a href="https://github.com/verasls/BaSEIB_isokinetic_strength"><code>BaSEIB_isokinetic_strenght</code></a>: Python code to process raw isokinetic strength data from the BaSEIB - Bariatric Surgery and Exercise Intervention Bone Trial.</p></li>
+<li><p><a
+href="https://github.com/verasls/sync_GRF_ACC"><code>sync_GRF_ACC</code></a>:
+MATLAB code to synchronize force platforms and accelerometers signals on
+various jumping trials.</p></li>
+<li><p><a
+href="https://github.com/verasls/daily_GRF"><code>daily_GRF</code></a>:
+Python/R code to predict ground reaction forces based on daily living
+raw acceleration data using methods described by <a
+href="https://link.springer.com/article/10.1007/s00198-020-05295-2">Veras
+et al. 2020</a>.</p></li>
+<li><p><a
+href="https://github.com/verasls/BaSEIB_isokinetic_strength"><code>BaSEIB_isokinetic_strenght</code></a>:
+Python code to process raw isokinetic strength data from the BaSEIB -
+Bariatric Surgery and Exercise Intervention Bone Trial.</p></li>
 </ul>
 </div>
 
