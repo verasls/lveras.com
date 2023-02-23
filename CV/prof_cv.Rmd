@@ -1,0 +1,149 @@
+---
+author: Lucas Veras
+date: "`r Sys.Date()`"
+output:
+  pdf_document:
+    includes:
+      in_header: columns.tex
+header-includes:
+   - \usepackage{fullpage}
+   - \usepackage{sourcesanspro}
+   - \usepackage{sectsty}
+   - \usepackage{fontawesome5}
+   - \usepackage{hyperref}
+   - \definecolor{dark-gray}{RGB}{68, 68, 68}
+   - \definecolor{light-gray}{gray}{0.35}
+   - \usepackage{fancyhdr}
+   - \usepackage{lastpage}
+   - \pagestyle{fancy}
+   - \cfoot{\thepage\ / \pageref{LastPage}}
+   - \renewcommand{\headrulewidth}{0pt}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(results = "asis", echo = FALSE)
+
+source("cv_printing_functions.R")
+
+# Read in all data and initialize a CV printer object
+cv <- create_CV_object(
+  data_location = "https://docs.google.com/spreadsheets/d/1muaB2KmoQj_OvOB54AJcTvLJ_sJGdHXOZs1c3tGyB5A/edit#gid=1730172225",
+  pdf_mode = "true"
+)
+
+```
+
+\begin{tabular*}{\textwidth}{@{}p{.45\textwidth}@{\extracolsep{\fill}}r@{}}
+\raggedright
+\begin{LARGE}
+\textbf{Lucas Veras} \\
+\end{LARGE}
+\vspace{3.5em}
+\begin{Large}
+\textbf{\textit{Curriculum Vitae}}
+\end{Large}
+&
+\begin{tabular}[t]{ r@{}}
+```{r echo = FALSE, results = 'asis'}
+contact_info <- print_contact_info(cv)
+cat(contact_info)
+```
+\end{tabular}
+\end{tabular*}
+
+\rule{\linewidth}{0.8pt}
+
+\vspace{1.5em}
+
+\begin{Large}
+\textcolor{dark-gray}{\faIcon{user}} \textbf{Summary}
+\end{Large}
+
+```{r}
+sum <- print_summary(cv)
+cat(sum)
+```
+
+\vspace{1.5em}
+
+\begin{Large}
+\textcolor{dark-gray}{\faIcon{code}} \textbf{Technical skills}
+\end{Large}
+
+```{r}
+skl <- print_skills(cv)
+cat(skl)
+```
+
+\vspace{1.5em}
+
+\begin{Large}
+\textcolor{dark-gray}{\faIcon{user-tie}} \textbf{Professional experience}
+\end{Large}
+
+```{r}
+exp <- print_experience(cv)
+cat(exp)
+```
+
+\vspace{1.5em}
+
+\begin{Large}
+\textcolor{dark-gray}{\faIcon{book}} \textbf{Courses}
+\end{Large}
+
+```{r}
+cou <- print_courses(cv)
+cat(cou)
+```
+
+\vspace{1.5em}
+
+\pagebreak
+
+\begin{Large}
+\textcolor{dark-gray}{\faIcon{graduation-cap}} \textbf{Education}
+\end{Large}
+
+```{r}
+edu <- print_education(cv)
+cat(edu)
+```
+
+\vspace{1.5em}
+
+\begin{Large}
+\textcolor{dark-gray}{\faIcon{comment}} \textbf{Languages}
+\end{Large}
+
+```{r}
+lan <- print_languages(cv)
+cat(lan)
+```
+
+\vspace{1.5em}
+
+\begin{Large}
+\textcolor{dark-gray}{\faIcon{award}} \textbf{Awards}
+\end{Large}
+
+```{r}
+awards <- print_awards(cv)
+cat(awards)
+```
+
+\vspace{1.5em}
+
+\begin{Large}
+\textcolor{dark-gray}{\faIcon{file-alt}} \textbf{Scientific papers}
+\end{Large}
+
+```{r}
+papers <- print_papers(cv)
+cat(papers)
+```
+
+\vspace*{\fill}
+\flushright \footnotesize Last updated on `r Sys.Date()`
+
+\flushright \footnotesize The source code of this CV is available on \textcolor{light-gray}{\href{https://github.com/verasls/verasls.github.io/tree/master/CV}{GitHub \faIcon{github}}}

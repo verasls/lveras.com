@@ -419,3 +419,129 @@ print_review <- function(cv) {
     .open = "<", .close = ">"
   )
 }
+
+#' @description Objectives section
+print_summary <- function(cv) {
+  d <- dplyr::filter(cv$entries_data, section == "objectives")
+  d$description_1
+}
+
+#' @description Professional experience section
+print_experience <- function(cv) {
+  d <- dplyr::filter(cv$entries_data, section == "experience")
+  exp <- glue::glue_data(
+    d,
+    "
+
+     \\vspace{0.3em}
+
+     \\begin{cols}
+     \\begin{col}{0.15\\textwidth}
+     \\flushright \\textcolor{light-gray}{<start> - <end>}
+     \\end{col}
+     \\begin{col}{0.02\\textwidth}
+     \\textcolor{white}{x}
+     \\end{col}
+     \\begin{col}{0.83\\textwidth}
+     \\textbf{<title>}, <institution>
+
+     \\textcolor{dark-gray}{\\faIcon{map-marker-alt}} <loc>
+
+     \\noindent \\small <description_1>
+     \\end{col}
+     \\end{cols}
+
+     ",
+    .open = "<", .close = ">"
+  )
+
+  exp
+}
+
+#' @description Courses section
+print_courses <- function(cv) {
+  d <- dplyr::filter(cv$entries_data, section == "courses")
+  cou <- glue::glue_data(
+    d,
+    "
+
+     \\vspace{0.3em}
+
+     \\begin{cols}
+     \\begin{col}{0.15\\textwidth}
+     \\flushright \\textcolor{light-gray}{<start> - <end>}
+     \\end{col}
+     \\begin{col}{0.02\\textwidth}
+     \\textcolor{white}{x}
+     \\end{col}
+     \\begin{col}{0.83\\textwidth}
+     \\textbf{<title>}, <institution>
+
+     \\textcolor{dark-gray}{\\faIcon{map-marker-alt}} <loc>
+     \\end{col}
+     \\end{cols}
+
+     ",
+    .open = "<", .close = ">"
+  )
+
+  cou
+}
+
+#' @description Technical skills section
+print_skills <- function(cv) {
+  d <- dplyr::filter(cv$entries_data, section == "skills")
+  skl <- glue::glue_data(
+    d,
+    "
+
+     \\vspace{0.3em}
+
+     \\begin{cols}
+     \\begin{col}{0.15\\textwidth}
+     \\flushright \\textcolor{light-gray}{<title>}
+     \\end{col}
+     \\begin{col}{0.02\\textwidth}
+     \\textcolor{white}{x}
+     \\end{col}
+     \\begin{col}{0.83\\textwidth}
+     <description_1>
+
+     \\end{col}
+     \\end{cols}
+
+     ",
+    .open = "<", .close = ">"
+  )
+
+  skl
+}
+
+#' @description Languages section
+print_languages <- function(cv) {
+  d <- dplyr::filter(cv$entries_data, section == "languages")
+  lan <- glue::glue_data(
+    d,
+    "
+
+     \\vspace{0.3em}
+
+     \\begin{cols}
+     \\begin{col}{0.15\\textwidth}
+     \\flushright \\textcolor{light-gray}{-}
+     \\end{col}
+     \\begin{col}{0.02\\textwidth}
+     \\textcolor{white}{x}
+     \\end{col}
+     \\begin{col}{0.83\\textwidth}
+     \\textbf{<title>}, <description_1>
+
+     \\end{col}
+     \\end{cols}
+
+     ",
+    .open = "<", .close = ">"
+  )
+
+  lan
+}
