@@ -1,0 +1,254 @@
+:root {
+  --logo-blue-1: #202859;
+  --logo-blue-2: #2d4f6c;
+  --logo-blue-3: #3d6991;
+  --logo-blue-4: #4d7da6;
+  --light-blue: #d8e1e9;
+  --lightest-blue: #ecf0f4;
+  --dark-gray: #333;
+  --medium-gray: #555;
+  --light-gray: #777;
+  --black: #000;
+}
+
+/* Reset -------------------------------------------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* Base --------------------------------------------------------------------- */
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--medium-gray);
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
+
+main {
+  overflow: scroll;
+}
+
+/* Header ------------------------------------------------------------------- */
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 9.6rem;
+  align-items: center;
+  background-color: var(--lightest-blue);
+
+  padding: 3.2rem;
+  position: relative;
+
+  border-right: 1px solid var(--light-blue);
+}
+
+.logo {
+  height: 4rem;
+  transition: all 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+.site-options,
+.social-media {
+  list-style: none;
+  display: flex;
+  gap: 2.4rem;
+}
+
+.options-icon,
+.social-media-icon {
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--medium-gray);
+  transition: all 0.3s;
+}
+
+.options-icon:hover,
+.options-icon:active,
+.social-media-icon:hover,
+.social-media-icon:active {
+  color: var(--logo-blue-1);
+  transform: scale(1.1);
+}
+
+.social-media-link:link,
+.social-media-link:visited {
+  text-decoration: none;
+}
+
+.main-nav {
+  padding: 3.6rem 0;
+  border-top: 1px solid var(--light-blue);
+  border-bottom: 1px solid var(--light-blue);
+  width: 80%;
+}
+
+.main-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+  align-items: center;
+  grid-column: 1;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--dark-gray);
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.main-nav-link {
+  position: relative;
+}
+
+.main-nav-link::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--logo-blue-1);
+  transform: scaleX(0);
+  transition: all 0.3s ease;
+}
+
+.main-nav-link:hover::before {
+  transform: scaleX(1);
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: var(--logo-blue-1);
+}
+
+.copyright:last-child {
+  color: var(--medium-gray);
+  font-size: 1rem;
+  margin-top: auto;
+}
+
+/* Hero section ------------------------------------------------------------- */
+
+.section-hero {
+  padding: 4.8rem 0 9.6rem 0;
+  background-color: var(--lightest-blue);
+}
+
+.hero {
+  max-width: 130rem;
+  margin: 5.2rem auto;
+  padding: 0 3.2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.hero-logo--text {
+  font-family: "Bebas Neue", cursive !important;
+  user-select: none !important;
+  color: var(--black);
+  font-size: 14rem;
+  line-height: 0.8;
+  letter-spacing: -1rem;
+  justify-self: end;
+  margin-bottom: -1.6rem;
+}
+
+.logo-text-letter {
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.logo-text-letter:hover {
+  transform: scale(1.1);
+}
+
+.hero-logo--boxes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 0.5rem;
+  justify-self: start;
+}
+
+.hero-logo--box {
+  height: 6rem;
+  width: 6rem;
+  transition: all 0.4s;
+}
+
+.hero-logo--box:hover {
+  transform: scale(1.1);
+}
+
+.box--col1 {
+  background-color: var(--logo-blue-1);
+  grid-column: 1;
+}
+.box--col2 {
+  background-color: var(--logo-blue-2);
+  grid-column: 2;
+}
+
+.box--col3 {
+  background-color: var(--logo-blue-3);
+  grid-column: 3;
+}
+
+.box--col4 {
+  background-color: var(--logo-blue-4);
+  grid-column: 4;
+}
+
+.box--row1 {
+  grid-row: 1;
+}
+
+.box--row2 {
+  grid-row: 2;
+}
+
+.box--row3 {
+  grid-row: 3;
+}
+
+.box--row4 {
+  grid-row: 4;
+}
+
+/* About section ------------------------------------------------------------- */
+
+.section-about {
+  padding: 9.6rem 25.6rem;
+}
+
+.about-text {
+  color: var(--medium-gray);
+  font-size: 1.8rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem;
+}
