@@ -272,7 +272,7 @@ h3 {
 /* About section ------------------------------------------------------------- */
 
 .section-about {
-  padding: 9.6rem 25.6rem;
+  padding: 9.6rem 25.6rem 12.8rem 25.6rem;
 }
 
 .about-text {
@@ -316,7 +316,7 @@ h3 {
 /* Tools and skills section -------------------------------------------------- */
 
 .section-tools {
-  padding: 9.6rem 25.6rem;
+  padding: 0 25.6rem 12.8rem 25.6rem;
 }
 
 .tools-card {
