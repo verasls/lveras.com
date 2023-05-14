@@ -5,7 +5,7 @@
   --logo-blue-4: #4d7da6;
   --light-blue: #d8e1e9;
   --lightest-blue: #ecf0f4;
-  --dark-gray: #333;
+  --dark-gray: #444;
   --medium-gray: #555;
   --light-gray: #777;
   --black: #000;
@@ -23,7 +23,7 @@ html {
   font-size: 62.5%;
 }
 
-/* Base --------------------------------------------------------------------- */
+/* General ------------------------------------------------------------------ */
 
 body {
   font-family: "Roboto", sans-serif;
@@ -38,6 +38,35 @@ body {
 
 main {
   overflow: scroll;
+}
+
+h2,
+h3 {
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  color: var(--dark-gray);
+}
+
+h2 {
+  font-size: 3.6rem;
+  font-weight: 700;
+  margin-bottom: 3.2rem;
+}
+
+h3 {
+  font-size: 2.4rem;
+  font-weight: 500;
+  margin-bottom: 2.4rem;
+}
+
+.subheading {
+  display: block;
+  color: var(--dark-gray);
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 0.75px;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
 }
 
 /* Header ------------------------------------------------------------------- */
@@ -153,7 +182,7 @@ main {
 /* Hero section ------------------------------------------------------------- */
 
 .section-hero {
-  padding: 4.8rem 0 9.6rem 0;
+  padding: 9.6rem 0;
   background-color: var(--lightest-blue);
 }
 
@@ -169,7 +198,7 @@ main {
 
 .hero-logo--text {
   font-family: "Bebas Neue", cursive !important;
-  user-select: none !important;
+  user-select: none;
   color: var(--black);
   font-size: 14rem;
   line-height: 0.8;
@@ -253,6 +282,10 @@ main {
   margin-bottom: 4.8rem;
 }
 
+.about-text:last-child {
+  margin-bottom: 0;
+}
+
 .about-link:link,
 .about-link:visited {
   text-decoration: none;
@@ -260,7 +293,6 @@ main {
 }
 
 .about-link {
-  /* display: inline-block; */
   position: relative;
 }
 
@@ -279,4 +311,69 @@ main {
 
 .about-link:hover::before {
   transform: scaleX(1);
+}
+
+/* Tools and skills section -------------------------------------------------- */
+
+.section-tools {
+  padding: 9.6rem 25.6rem;
+}
+
+.tools-card {
+  padding: 4.8rem 3.2rem;
+  background-color: var(--lightest-blue);
+  border-radius: 1rem;
+  box-shadow: 0 1.6rem 4.8rem rgba(0, 0, 0, 0.075);
+}
+
+.tools-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.tools-category {
+  padding: 1.6rem 0 3.2rem 0;
+}
+
+.tools-category:last-child {
+  padding-bottom: 0;
+}
+
+.tools-list {
+  list-style: none;
+  display: flex;
+  gap: 2.4rem;
+}
+
+.tool {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 0.4rem 0.8rem;
+  border: 2px solid var(--logo-blue-1);
+  border-radius: 0.4rem;
+}
+
+.tool-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.tool-name {
+  font-size: 1.4rem;
+  color: var(--dark-gray);
+  user-select: none;
+}
+
+.tool {
+  transition: all 0.15s;
+}
+
+.tool:hover {
+  transform: scale(1.05);
+}
+
+.tool-icon path {
+  fill: var(--logo-blue-1);
 }
