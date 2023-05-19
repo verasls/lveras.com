@@ -9,6 +9,9 @@
   --medium-gray: #555;
   --light-gray: #777;
   --black: #000;
+  --white: #f8f9fa;
+  --gradient-color-1: rgba(216, 225, 233, 0.6);
+  --gradient-color-2: rgba(45, 79, 108, 0.6);
 }
 
 /* Reset -------------------------------------------------------------------- */
@@ -67,6 +70,53 @@ h3 {
   letter-spacing: 0.75px;
   text-transform: uppercase;
   margin-bottom: 1.6rem;
+}
+
+.text {
+  color: var(--medium-gray);
+  font-size: 1.8rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem;
+}
+
+.text:last-child {
+  margin-bottom: 0;
+}
+
+.link {
+  position: relative;
+}
+
+.link:link,
+.link:visited {
+  text-decoration: none;
+  /* TODO: change the color to improve accessibility */
+  color: var(--logo-blue-4);
+}
+
+.link::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--logo-blue-4);
+  transform: scaleX(0);
+  transition: all 0.3s ease;
+}
+
+.link:hover::before {
+  transform: scaleX(1);
+}
+
+.monospaced {
+  font-family: "Roboto Mono", monospace;
+}
+
+.semi-bold {
+  font-weight: 600;
 }
 
 /* Header ------------------------------------------------------------------- */
@@ -275,44 +325,6 @@ h3 {
   padding: 9.6rem 25.6rem 12.8rem 25.6rem;
 }
 
-.about-text {
-  color: var(--medium-gray);
-  font-size: 1.8rem;
-  line-height: 1.6;
-  margin-bottom: 4.8rem;
-}
-
-.about-text:last-child {
-  margin-bottom: 0;
-}
-
-.about-link:link,
-.about-link:visited {
-  text-decoration: none;
-  color: var(--logo-blue-4);
-}
-
-.about-link {
-  position: relative;
-}
-
-.about-link::before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 2px;
-  bottom: -2px;
-  left: 0;
-  background-color: var(--logo-blue-4);
-  transform: scaleX(0);
-  transition: all 0.3s ease;
-}
-
-.about-link:hover::before {
-  transform: scaleX(1);
-}
-
 /* Tools and skills section -------------------------------------------------- */
 
 .section-tools {
@@ -376,4 +388,110 @@ h3 {
 
 .tool-icon path {
   fill: var(--logo-blue-1);
+}
+
+/* Projects section --------------------------------------------------------- */
+
+.section-projects {
+  padding: 0 25.6rem 12.8rem 25.6rem;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.6rem;
+  padding: 1.6rem 1.6rem 4.8rem 1.6rem;
+  align-items: stretch;
+  justify-items: center;
+}
+
+.project-item {
+  padding: 4.8rem;
+  border-radius: 1rem;
+  box-shadow: 0 2.4rem 3.2rem 0 rgba(0, 0, 0, 0.075);
+  overflow: hidden;
+  transition: all 0.5s;
+  position: relative;
+}
+
+.project-img {
+  display: block;
+  width: 100%;
+  transition: all 0.5s;
+}
+
+.new-project {
+  padding: 3.2rem;
+}
+
+.new-project-txt {
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+
+.project-description {
+  position: absolute;
+  opacity: 0;
+  padding: 2.4rem;
+  bottom: 0;
+  left: 0;
+  transition: all 0.5s;
+}
+
+.new-project-description-txt {
+  font-size: 1.6rem !important;
+  line-height: 1.2 !important;
+}
+
+.project-description-txt {
+  font-size: 1.4rem;
+  color: var(--white);
+}
+
+.project-description-tags {
+  display: flex;
+  gap: 0.8rem;
+  padding-top: 1.2rem;
+}
+
+.project-description-tag {
+  background-color: var(--lightest-blue);
+  font-size: 1.4rem;
+  color: var(--dark-gray);
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.4rem;
+}
+
+.project-item:hover .project-img {
+  filter: blur(5px);
+}
+
+.project-item:hover .new-project-txt {
+  filter: blur(5px);
+}
+
+.project-item:hover .project-description {
+  opacity: 1;
+  z-index: 99;
+}
+
+.project-item::after {
+  content: "";
+  background: linear-gradient(
+    180deg,
+    var(--gradient-color-1) 0%,
+    var(--gradient-color-2) 65%
+  );
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 9;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.project-item:hover::after {
+  opacity: 1;
 }
