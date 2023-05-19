@@ -121,8 +121,13 @@ h3 {
 
 /* Header ------------------------------------------------------------------- */
 
+.header-component {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: var(--light-gray);
+}
+
 .header {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 9.6rem;
