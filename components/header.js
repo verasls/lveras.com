@@ -24,7 +24,7 @@ headerTemplate.innerHTML = `
         <li>
           <a class="main-nav-link" href="index.html#projects">Projects</a>
         </li>
-        <li><a class="main-nav-link" href="#">Item</a></li>
+        <li><a class="main-nav-link" href="index.html#contact">Contact</a></li>
       </ul>
     </nav>
 
