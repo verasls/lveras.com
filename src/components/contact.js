@@ -13,7 +13,7 @@ export function Contact() {
         </p>
         <p className="text">I'll answer all messages as soon as possible.</p>
 
-        <div className="contact-form">
+        <form className="contact-form">
           <div className="contact-form__name">
             <label htmlFor="name">Name</label>
             <input
@@ -49,7 +49,7 @@ export function Contact() {
           </div>
 
           <button className="btn-submit">Submit</button>
-        </div>
+        </form>
       </div>
     </section>
   );
