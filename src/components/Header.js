@@ -7,7 +7,7 @@ import {
   logoTwitter,
 } from "ionicons/icons";
 
-import "./header.css";
+import "./Header.css";
 
 export function Header() {
   return (

@@ -1,4 +1,4 @@
-import "./tools.css";
+import "./Tools.css";
 
 export function Tools() {
   return (

@@ -1,9 +1,9 @@
-import { Header } from "./components/header";
-import { Hero } from "./components/hero";
-import { About } from "./components/about";
-import { Tools } from "./components/tools";
-import { Projects } from "./components/projects";
-import { Contact } from "./components/contact";
+import { Header } from "./components/Header";
+import { Hero } from "./components/Hero";
+import { About } from "./components/About";
+import { Tools } from "./components/Tools";
+import { Projects } from "./components/Projects";
+import { Contact } from "./components/Contact";
 
 import "./index.css";
 
