@@ -3,7 +3,7 @@
   background-color: var(--lightest-blue);
 }
 
-.hero {
+.hero-logo {
   max-width: 130rem;
   margin: 5.2rem auto;
   padding: 0 3.2rem;
@@ -13,7 +13,7 @@
   gap: 1.8rem;
 }
 
-.hero-logo--text {
+.hero-logo__text {
   font-family: "Bebas Neue", cursive !important;
   user-select: none;
   color: var(--black);
@@ -23,16 +23,16 @@
   margin-bottom: -1.6rem;
 }
 
-.logo-text-letter {
+.hero-logo__letter {
   display: inline-block;
   transition: 0.3s;
 }
 
-.logo-text-letter:hover {
+.hero-logo__letter:hover {
   transform: scale(1.1);
 }
 
-.hero-logo--boxes {
+.hero-logo__boxes {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
@@ -40,13 +40,13 @@
   justify-self: start;
 }
 
-.hero-logo--box {
+.box {
   height: 6rem;
   width: 6rem;
   transition: all 0.4s;
 }
 
-.hero-logo--box:hover {
+.box:hover {
   transform: scale(1.1);
 }
 

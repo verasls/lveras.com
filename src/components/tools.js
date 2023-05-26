@@ -3,17 +3,17 @@ import "./tools.css";
 export function Tools() {
   return (
     <section className="section-tools" id="tools">
-      <div className="tools-card">
+      <div className="tools__card">
         <span className="subheading">Tools and skills</span>
         <h2>Tech stack I use in my projects</h2>
 
-        <div className="tools-container">
-          <div className="tools-category">
+        <div className="tools__container">
+          <div className="tools__category">
             <h3>Web development</h3>
-            <ul className="tools-list">
+            <ul className="tools__list">
               <li>
-                <div className="tool">
-                  <svg className="tool-icon" viewBox="0 0 128 128">
+                <div className="tools__item">
+                  <svg className="tools__icon" viewBox="0 0 128 128">
                     <path
                       d="M9.032 2l10.005 112.093 44.896 12.401 45.02-12.387L118.968
                         2H9.032zm89.126 26.539l-.627 7.172L97.255 39H44.59l1.257
@@ -23,12 +23,12 @@ export function Tools() {
                         67H33.261l-3.383-38.117L29.549 25h68.939l-.33 3.539z"
                     ></path>
                   </svg>
-                  <p className="tool-name">HTML</p>
+                  <p className="tools__name">HTML</p>
                 </div>
               </li>
               <li>
-                <div className="tool">
-                  <svg className="tool-icon" viewBox="0 0 128 128">
+                <div className="tools__item">
+                  <svg className="tools__icon" viewBox="0 0 128 128">
                     <path
                       d="M8.76 1l10.055 112.883 45.118 12.58 45.244-12.626L119.24
                         1H8.76zm89.591 25.862l-3.347 37.605.01.203-.014.467v-.004l-2.378
@@ -39,12 +39,12 @@ export function Tools() {
                     ></path>
                   </svg>
 
-                  <p className="tool-name">CSS</p>
+                  <p className="tools__name">CSS</p>
                 </div>
               </li>
               <li>
-                <div className="tool">
-                  <svg className="tool-icon" viewBox="0 0 128 128">
+                <div className="tools__item">
+                  <svg className="tools__icon" viewBox="0 0 128 128">
                     <path
                       d="M2 1v125h125V1H2zm66.119 106.513c-1.845 3.749-5.367 6.212-9.448 7.401-6.271 
                         1.44-12.269.619-16.731-2.059-2.986-1.832-5.318-4.652-6.901-7.901l9.52-5.83c.083.035.333.487.667
@@ -64,18 +64,18 @@ export function Tools() {
                     ></path>
                   </svg>
 
-                  <p className="tool-name">Javascript</p>
+                  <p className="tools__name">Javascript</p>
                 </div>
               </li>
             </ul>
           </div>
 
-          <div className="tools-category">
+          <div className="tools__category">
             <h3>Data science</h3>
-            <ul className="tools-list">
+            <ul className="tools__list">
               <li>
-                <div className="tool">
-                  <svg className="tool-icon" viewBox="0 0 128 128">
+                <div className="tools__item">
+                  <svg className="tools__icon" viewBox="0 0 128 128">
                     <path
                       d="M64 14.648c-35.346 0-64 19.19-64 42.863C0 78.275 22.046
                         95.589 51.316 99.53V86.699c-15.55-4.89-26.166-14.693-26.166-25.991 
@@ -93,16 +93,16 @@ export function Tools() {
                         28.219-21.834.009V41.263h43.845s19.97.36 19.97 19.359S97.47 
                         81.035 97.47 81.035zm-9.497-24.137l-13.218-.009-.006 12.257 
                         13.224-.004s6.124-.019 6.124-6.235c0-6.34-6.124-6.01-6.124-6.01z"
-                      fill-rule="evenodd"
+                      fillRule="evenodd"
                     ></path>
                   </svg>
 
-                  <p className="tool-name">R</p>
+                  <p className="tools__name">R</p>
                 </div>
               </li>
               <li>
-                <div className="tool">
-                  <svg className="tool-icon" viewBox="0 0 128 128">
+                <div className="tools__item">
+                  <svg className="tools__icon" viewBox="0 0 128 128">
                     <path
                       d="M49.33 62h29.159C86.606 62 93 55.132 93 
                         46.981V19.183c0-7.912-6.632-13.856-14.555-15.176-5.014-.835-10.195-1.215-15.187-1.191-4.99.023-9.612.448-13.805 
@@ -121,12 +121,12 @@ export function Tools() {
                     ></path>
                   </svg>
 
-                  <p className="tool-name">Python</p>
+                  <p className="tools__name">Python</p>
                 </div>
               </li>
               <li>
-                <div className="tool">
-                  <svg className="tool-icon" viewBox="0 0 128 128">
+                <div className="tools__item">
+                  <svg className="tools__icon" viewBox="0 0 128 128">
                     <defs>
                       <path
                         d="M54.74 128L32.9 115.32V40.55L0 59.56l.08-28.32L54.74 
@@ -138,24 +138,19 @@ export function Tools() {
                     <path
                       d="M61.55 128l-21.84-12.68V40.55L6.81 59.56l.08-28.32L61.55
                         0zM66.46 0v128l21.84-12.68V79.31l16.49 9.53-.1-24.63-16.39-9.36v-14.3l32.89 19.01-.08-28.32z"
-                      font-weight="400"
-                      font-family="sans-serif"
+                      fontWeight="400"
+                      fontFamily="sans-serif"
                       overflow="visible"
                     ></path>
-                    <use
-                      // xlink:href="#tensorflow-original-a"
-                      fill-opacity="0"
-                      stroke="#000"
-                      stroke-opacity="0"
-                    ></use>
+                    <use fillOpacity="0" stroke="#000" strokeOpacity="0"></use>
                   </svg>
 
-                  <p className="tool-name">Tensorflow</p>
+                  <p className="tools__name">Tensorflow</p>
                 </div>
               </li>
               <li>
-                <div className="tool">
-                  <svg className="tool-icon" viewBox="0 0 128 128">
+                <div className="tools__item">
+                  <svg className="tools__icon" viewBox="0 0 128 128">
                     <path
                       d="M123.965
                         91.902c-7.246-18.297-13.262-37.058-20.184-55.476-3.054-7.84-6.047-15.746-10.215-23.082-1.656-2.633-3.238-5.528-5.953-7.215a4.013 
@@ -176,18 +171,18 @@ export function Tools() {
                     ></path>
                   </svg>
 
-                  <p className="tool-name">Matlab</p>
+                  <p className="tools__name">Matlab</p>
                 </div>
               </li>
             </ul>
           </div>
 
-          <div className="tools-category">
+          <div className="tools__category">
             <h3>Other tools</h3>
-            <ul className="tools-list">
+            <ul className="tools__list">
               <li>
-                <div className="tool">
-                  <svg className="tool-icon" viewBox="0 0 128 128">
+                <div className="tools__item">
+                  <svg className="tools__icon" viewBox="0 0 128 128">
                     <path
                       d="M124.737 58.378L69.621 3.264c-3.172-3.174-8.32-3.174-11.497 
                         0L46.68 14.71l14.518 14.518c3.375-1.139 7.243-.375 9.932 2.314 
@@ -203,12 +198,12 @@ export function Tools() {
                     ></path>
                   </svg>
 
-                  <p className="tool-name">Git</p>
+                  <p className="tools__name">Git</p>
                 </div>
               </li>
               <li>
-                <div className="tool">
-                  <svg className="tool-icon" viewBox="0 0 128 128">
+                <div className="tools__item">
+                  <svg className="tools__icon" viewBox="0 0 128 128">
                     <path
                       d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 
                         17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905
@@ -240,12 +235,12 @@ export function Tools() {
                     ></path>
                   </svg>
 
-                  <p className="tool-name">Github</p>
+                  <p className="tools__name">Github</p>
                 </div>
               </li>
               <li>
-                <div className="tool">
-                  <svg className="tool-icon" viewBox="0 0 128 128">
+                <div className="tools__item">
+                  <svg className="tools__icon" viewBox="0 0 128 128">
                     <path d="M-143.76 4.24h119.53v119.53h-119.53z"></path>
                     <path
                       d="M109.01 28.64L71.28 6.24c-2.25-1.33-4.77-2-7.28-2s-5.03.67-7.28 
@@ -269,12 +264,12 @@ export function Tools() {
                     ></path>
                   </svg>
 
-                  <p className="tool-name">Bash</p>
+                  <p className="tools__name">Bash</p>
                 </div>
               </li>
               <li>
-                <div className="tool">
-                  <svg className="tool-icon" viewBox="0 0 128 128">
+                <div className="tools__item">
+                  <svg className="tools__icon" viewBox="0 0 128 128">
                     <path
                       d="M72.6 80.5c.2.2.6.5.9.5h5.3c.3 0 .7-.3.9-.5l1.4-1.5c.2-.2.3-.4.3-.6l1.5-5.1c.1-.5
                         0-1-.3-1.3l-1.1-.9c-.2-.2-.6-.1-.9-.1h-4.8l-.2-.2-.1-.1c-.2 0-.4-.1-.6.1L73 72c-.2
@@ -296,7 +291,7 @@ export function Tools() {
                     ></path>
                   </svg>
 
-                  <p className="tool-name">Vim</p>
+                  <p className="tools__name">Vim</p>
                 </div>
               </li>
             </ul>

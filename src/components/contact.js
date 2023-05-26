@@ -3,7 +3,7 @@ import "./contact.css";
 export function Contact() {
   return (
     <section className="section-contact" id="contact">
-      <div className="contact-form-card">
+      <div className="contact-form__card">
         <span className="subheading">Contact-me</span>
         <h2>Thanks for reaching out! How can I help you?</h2>
 
@@ -14,8 +14,8 @@ export function Contact() {
         <p className="text">I'll answer all messages as soon as possible.</p>
 
         <div className="contact-form">
-          <div className="input-name">
-            <label for="name">Name</label>
+          <div className="contact-form__name">
+            <label htmlFor="name">Name</label>
             <input
               id="name"
               type="text"
@@ -25,8 +25,8 @@ export function Contact() {
             />
           </div>
 
-          <div className="input-email">
-            <label for="email">Email</label>
+          <div className="contact-form__email">
+            <label htmlFor="email">Email</label>
             <input
               id="email"
               type="email"
@@ -36,8 +36,8 @@ export function Contact() {
             />
           </div>
 
-          <div className="input-textarea">
-            <label for="message">Message</label>
+          <div className="contact-form__textarea">
+            <label htmlFor="message">Message</label>
             <textarea
               id="message"
               placeholder="Hi, I would like to talk about..."

@@ -2,19 +2,19 @@
   padding: 0 25.6rem 12.8rem 25.6rem;
 }
 
-.tools-card {
+.tools__card {
   padding: 4.8rem 3.2rem;
   background-color: var(--lightest-blue);
   border-radius: 1rem;
   box-shadow: 0 1.6rem 4.8rem rgba(0, 0, 0, 0.075);
 }
 
-.tools-container {
+.tools__container {
   display: flex;
   flex-direction: column;
 }
 
-.tools-category {
+.tools__category {
   padding: 1.6rem 0 3.2rem 0;
 }
 
@@ -22,13 +22,13 @@
   padding-bottom: 0;
 }
 
-.tools-list {
+.tools__list {
   list-style: none;
   display: flex;
   gap: 2.4rem;
 }
 
-.tool {
+.tools__item {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,25 +38,25 @@
   border-radius: 0.4rem;
 }
 
-.tool-icon {
+.tools__icon {
   height: 2.4rem;
   width: 2.4rem;
 }
 
-.tool-name {
+.tools__name {
   font-size: 1.4rem;
   color: var(--dark-gray);
   user-select: none;
 }
 
-.tool {
+.tools__item {
   transition: all 0.15s;
 }
 
-.tool:hover {
+.tools__item:hover {
   transform: scale(1.05);
 }
 
-.tool-icon path {
+.tools__icon path {
   fill: var(--logo-blue-1);
 }
