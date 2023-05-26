@@ -21,62 +21,77 @@ export function Header() {
         />
       </NavHashLink>
 
-      <ul className="site-options">
-        <li>
-          <IonIcon className="site-options__icon" icon={contrastOutline} />
-        </li>
-        <li>
-          <IonIcon className="site-options__icon" icon={globeOutline} />
-        </li>
-      </ul>
-
-      <nav className="main-nav">
-        <ul className="main-nav__list">
-          <li>
-            <NavHashLink className="main-nav__link" to="/#about">
-              About
-            </NavHashLink>
-          </li>
-          <li>
-            <NavHashLink className="main-nav__link" to="/#tools">
-              Tools
-            </NavHashLink>
-          </li>
-          <li>
-            <NavHashLink className="main-nav__link" to="/#projects">
-              Projects
-            </NavHashLink>
-          </li>
-          <li>
-            <NavHashLink className="main-nav__link" to="/#contact">
-              Contact
-            </NavHashLink>
-          </li>
-        </ul>
-      </nav>
-
-      <ul className="social-media">
-        <li>
-          <a className="social-media__link" href="index.html">
-            <IonIcon className="social-media__icon" icon={logoGithub} />
-          </a>
-        </li>
-        <li>
-          <a className="social-media__link" href="index.html">
-            <IonIcon className="social-media__icon" icon={logoLinkedin} />
-          </a>
-        </li>
-        <li>
-          <a className="social-media__link" href="index.html">
-            <IonIcon className="social-media__icon" icon={logoTwitter} />
-          </a>
-        </li>
-      </ul>
+      <SiteOptions />
+      <MainNav />
+      <SocialMedia />
 
       <p className="copyright">
-        Copyright &copy; <span className="copyright__year">0000</span> by Lucas
-        Veras
+        Copyright &copy; {new Date().getFullYear()} by Lucas Veras
       </p>
     </header>
+  );
+}
+
+function SiteOptions() {
+  return (
+    <ul className="site-options">
+      <li>
+        <IonIcon className="site-options__icon" icon={contrastOutline} />
+      </li>
+      <li>
+        <IonIcon className="site-options__icon" icon={globeOutline} />
+      </li>
+    </ul>
+  );
+}
+
+function MainNav() {
+  return (
+    <nav className="main-nav">
+      <ul className="main-nav__list">
+        <li>
+          <NavHashLink className="main-nav__link" to="/#about">
+            About
+          </NavHashLink>
+        </li>
+        <li>
+          <NavHashLink className="main-nav__link" to="/#tools">
+            Tools
+          </NavHashLink>
+        </li>
+        <li>
+          <NavHashLink className="main-nav__link" to="/#projects">
+            Projects
+          </NavHashLink>
+        </li>
+        <li>
+          <NavHashLink className="main-nav__link" to="/#contact">
+            Contact
+          </NavHashLink>
+        </li>
+      </ul>
+    </nav>
+  );
+}
+
+function SocialMedia() {
+  return (
+    <ul className="social-media">
+      <li>
+        <a className="social-media__link" href="index.html">
+          <IonIcon className="social-media__icon" icon={logoGithub} />
+        </a>
+      </li>
+      <li>
+        <a className="social-media__link" href="index.html">
+          <IonIcon className="social-media__icon" icon={logoLinkedin} />
+        </a>
+      </li>
+      <li>
+        <a className="social-media__link" href="index.html">
+          <IonIcon className="social-media__icon" icon={logoTwitter} />
+        </a>
+      </li>
+    </ul>
   );
 }
