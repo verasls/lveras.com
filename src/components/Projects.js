@@ -1,3 +1,5 @@
+import { HashLink } from "react-router-hash-link";
+
 import "./Projects.css";
 
 export function Projects() {
@@ -77,9 +79,9 @@ export function Projects() {
       <p className="text">
         Some of my data science work is in the form of academic publications. If
         you are interested in my scientific papers, check them out{" "}
-        <a className="link" href="publications.html">
+        <HashLink className="link" to="/publications#publications">
           here
-        </a>
+        </HashLink>
         .
       </p>
     </section>
