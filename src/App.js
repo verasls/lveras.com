@@ -1,9 +1,5 @@
 import { Header } from "./components/Header";
-import { Hero } from "./components/Hero";
-import { About } from "./components/About";
-import { Tools } from "./components/Tools";
-import { Projects } from "./components/Projects";
-import { Contact } from "./components/Contact";
+import { Home } from "./pages/Home";
 
 import "./index.css";
 
@@ -12,11 +8,7 @@ export function App() {
     <>
       <Header />
       <main>
-        <Hero />
-        <About />
-        <Tools />
-        <Projects />
-        <Contact />
+        <Home />
       </main>
     </>
   );
