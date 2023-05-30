@@ -6,7 +6,7 @@ export function About() {
       <div className="about">
         <p className="text">Hi,</p>
         <p className="text">
-          I'm a sport cientist who began working in data science during my
+          I'm a sport scientist who began working in data science during my
           master's degree. Through my PhD research, I gained extensive
           experience in data analysis, modeling, and visualization, which has
           enabled me to extract insights from complex data sets. As a frontend
