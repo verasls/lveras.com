@@ -2,6 +2,23 @@ import { dataScienceTools, otherTools, webDevTools } from "./ToolsData.js";
 
 import "./Tools.css";
 
+export function Tools() {
+  return (
+    <section className="section-tools" id="tools">
+      <div className="tools__card">
+        <span className="subheading">Tools and skills</span>
+        <h2>Tech stack I use in my projects</h2>
+
+        <div className="tools__container">
+          <ToolsCategory categoryName="Web development" tools={webDevTools} />
+          <ToolsCategory categoryName="Data science" tools={dataScienceTools} />
+          <ToolsCategory categoryName="Other tools" tools={otherTools} />
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function ToolsCategory({ categoryName, tools }) {
   return (
     <div className="tools__container">
@@ -28,19 +45,3 @@ function ToolsItem({ tools }) {
   );
 }
 
-export function Tools() {
-  return (
-    <section className="section-tools" id="tools">
-      <div className="tools__card">
-        <span className="subheading">Tools and skills</span>
-        <h2>Tech stack I use in my projects</h2>
-
-        <div className="tools__container">
-          <ToolsCategory categoryName="Web development" tools={webDevTools} />
-          <ToolsCategory categoryName="Data science" tools={dataScienceTools} />
-          <ToolsCategory categoryName="Other tools" tools={otherTools} />
-        </div>
-      </div>
-    </section>
-  );
-}
