@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 import "./Contact.css";
 
@@ -26,8 +26,26 @@ function ContactForm() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const submitButtonRef = useRef(null);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    if (e.nativeEvent.submitter === e.target.elements.submitButton) {
+      if (name && email && message) {
+        setName("");
+        setEmail("");
+        setMessage("");
+
+        setModalOpen(true);
+      }
+    }
+  }
+
   return (
-    <form className="contact-form">
+    <form className="contact-form" onSubmit={handleSubmit} noValidate>
       <div className="contact-form__name">
         <label htmlFor="name">Name</label>
         <input
@@ -68,7 +86,34 @@ function ContactForm() {
         ></textarea>
       </div>
 
-      <button className="btn-submit">Submit</button>
+      <button
+        type="submit"
+        name="submitButton"
+        className="contact__btn contact__btn--submit"
+        ref={submitButtonRef}
+      >
+        Submit
+      </button>
+
+      <ContactModal isModalOpen={isModalOpen} setModalOpen={setModalOpen} />
     </form>
+  );
+}
+
+function ContactModal({ isModalOpen, setModalOpen }) {
+  return (
+    <div className={`contact-form__modal${isModalOpen ? " open" : ""}`}>
+      <p className="modal__text">Obrigado namoca por testar.</p>
+      <p className="modal__text">Te amo bebéia</p>
+
+      <div className="btn__container">
+        <button
+          className="contact__btn contact__btn--close-modal"
+          onClick={() => setModalOpen(false)}
+        >
+          OK
+        </button>
+      </div>
+    </div>
   );
 }

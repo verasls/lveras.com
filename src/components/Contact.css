@@ -6,6 +6,8 @@
   padding: 4.8rem 3.2rem;
   border-radius: 1rem;
   box-shadow: 0 1.6rem 4.8rem rgba(0, 0, 0, 0.075);
+
+  position: relative;
 }
 
 .contact-form__card p {
@@ -52,14 +54,10 @@ textarea {
   box-shadow: 0 0 0 2px var(--logo-blue-2);
 }
 
-.btn-submit {
-  grid-column: 2 / -1;
-
-  font-size: 2rem;
+.contact__btn {
   font-weight: 600;
   font-family: inherit;
   text-decoration: none;
-  padding: 0.8rem 3.2rem;
   border-radius: 9px;
 
   border: none;
@@ -69,10 +67,50 @@ textarea {
 
   background-color: var(--logo-blue-2);
   color: var(--white);
-  align-self: end;
-  justify-self: end;
 }
 
-.btn-submit:hover {
+.contact__btn--submit {
+  grid-column: 2 / -1;
+  align-self: end;
+  justify-self: end;
+
+  font-size: 2rem;
+  padding: 0.8rem 3.2rem;
+}
+
+.contact__btn:hover {
   background-color: var(--logo-blue-1);
+}
+
+.contact-form__modal {
+  background-color: white;
+  padding: 3.2rem;
+  border-radius: 9px;
+  box-shadow: 0 1.6rem 4.8rem rgba(0, 0, 0, 0.075);
+
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.contact-form__modal.open {
+  opacity: 1;
+}
+
+.modal__text {
+  font-size: 1.4rem;
+}
+
+.btn__container {
+  display: flex;
+  justify-content: center;
+  padding-top: 1.6rem;
+}
+
+.contact__btn--close-modal {
+  font-size: 1.4rem;
+  padding: 0.8rem 1.6rem;
 }
