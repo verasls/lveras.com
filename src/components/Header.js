@@ -2,7 +2,7 @@ import { NavHashLink } from "react-router-hash-link";
 import { IonIcon } from "@ionic/react";
 import {
   contrastOutline,
-  globeOutline,
+  languageOutline,
   logoGithub,
   logoLinkedin,
   logoTwitter,
@@ -39,7 +39,7 @@ function SiteOptions() {
         <IonIcon className="site-options__icon" icon={contrastOutline} />
       </li>
       <li>
-        <IonIcon className="site-options__icon" icon={globeOutline} />
+        <IonIcon className="site-options__icon" icon={languageOutline} />
       </li>
     </ul>
   );
