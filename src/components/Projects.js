@@ -6,18 +6,12 @@ import { addOutline, globeOutline, logoGithub } from "ionicons/icons";
 import "./Projects.css";
 
 export function Projects() {
-  const [showDescription, setShowDescription] = useState(false);
-
   return (
     <section className="section-projects" id="projects">
       <span className="subheading">Projects</span>
       <h2>Some of the work I've been doing</h2>
 
-      <ProjectsList
-        data={projectsData}
-        showDescription={showDescription}
-        setShowDescription={setShowDescription}
-      />
+      <ProjectsList data={projectsData} />
 
       <p className="text">
         Some of my data science work is in the form of academic publications. If
@@ -31,22 +25,19 @@ export function Projects() {
   );
 }
 
-function ProjectsList({ data, showDescription, setShowDescription }) {
+function ProjectsList({ data }) {
   return (
     <ul className="projects">
       {data.map((data) => (
-        <ProjectItem
-          key={data.id}
-          data={data}
-          showDescription={showDescription}
-          setShowDescription={setShowDescription}
-        />
+        <ProjectItem key={data.id} data={data} />
       ))}
     </ul>
   );
 }
 
-function ProjectItem({ data, showDescription, setShowDescription }) {
+function ProjectItem({ data }) {
+  const [showDescription, setShowDescription] = useState(false);
+
   return (
     <li
       className={`project__item project__item--background${
