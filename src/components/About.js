@@ -1,3 +1,5 @@
+import { NavHashLink } from "react-router-hash-link";
+
 import "./About.css";
 
 export function About() {
@@ -15,9 +17,9 @@ export function About() {
           dedicated to developing innovative solutions that bridge the gap
           between sports science, data science, and web development. Thank you
           for visiting my website, and please feel free to{" "}
-          <a className="link" href="index.html">
+          <NavHashLink className="link" to="/#contact">
             contact me
-          </a>{" "}
+          </NavHashLink>{" "}
           if you have any questions or if you need my help with your project.
         </p>
       </div>
