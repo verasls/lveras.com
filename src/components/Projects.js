@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { HashLink } from "react-router-hash-link";
 import { IonIcon } from "@ionic/react";
-import { addOutline, globeOutline, logoGithub } from "ionicons/icons";
+import { addOutline } from "ionicons/icons";
+
+import { projectsData } from "./ProjectsData.js";
 
 import "./Projects.css";
 
@@ -104,92 +106,3 @@ function ProjectTags({ data }) {
 function ProjectLinks({ data }) {
   return <li>{data.link}</li>;
 }
-
-const projectsData = [
-  {
-    id: 1,
-    title: "lvmisc",
-    description:
-      "An R package with miscellaneous functions for data analysis and visualization.",
-    display: (
-      <img
-        className="project__img"
-        src="images/projects/lvmisc.png"
-        alt="lvmisc R package logo"
-      />
-    ),
-    tags: [{ id: 1, tagName: "R" }],
-    links: [
-      {
-        id: 1,
-        link: (
-          <a className="project__link-item" href="https://lveras.com/lvmisc/">
-            <IonIcon icon={globeOutline} />
-          </a>
-        ),
-      },
-      {
-        id: 2,
-        link: (
-          <a
-            className="project__link-item"
-            href="https://github.com/verasls/lvmisc/"
-          >
-            <IonIcon icon={logoGithub} />
-          </a>
-        ),
-      },
-    ],
-  },
-  {
-    id: 2,
-    title: "impactr",
-    description:
-      "An R package with functions to read, process and analyse raw accelerometer data related to mechanical loading variables",
-    display: (
-      <img
-        className="project__img"
-        src="images/projects/impactr.png"
-        alt="impactr R package logo"
-      />
-    ),
-    tags: [{ id: 1, tagName: "R" }],
-    links: [
-      {
-        id: 1,
-        link: (
-          <a className="project__link-item" href="https://lveras.com/impactr/">
-            <IonIcon icon={globeOutline} />
-          </a>
-        ),
-      },
-      {
-        id: 2,
-        link: (
-          <a
-            className="project__link-item"
-            href="https://github.com/verasls/impactr/"
-          >
-            <IonIcon icon={logoGithub} />
-          </a>
-        ),
-      },
-    ],
-  },
-  {
-    id: 3,
-    title: "test",
-    description: "Stay tuned for more of my work!",
-    display: (
-      <span className="monospaced new-project__txt">
-        &lt;div <br />
-        &nbsp;&nbsp;className="new-project" <br />
-        &gt; <br />
-        &nbsp;&nbsp;Work in progress... <br />
-        &lt;&#47;div&gt; <br />
-      </span>
-    ),
-    tags: [],
-    links: [],
-  },
-];
