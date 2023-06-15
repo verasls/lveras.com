@@ -2,7 +2,6 @@ import { NavHashLink } from "react-router-hash-link";
 import { IonIcon } from "@ionic/react";
 import {
   contrastOutline,
-  languageOutline,
   logoGithub,
   logoLinkedin,
   logoTwitter,
