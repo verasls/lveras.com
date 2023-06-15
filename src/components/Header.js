@@ -1,5 +1,4 @@
 import { NavHashLink } from "react-router-hash-link";
-import { animateScroll as scroll } from "react-scroll";
 import { IonIcon } from "@ionic/react";
 import {
   contrastOutline,
