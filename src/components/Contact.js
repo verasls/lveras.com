@@ -111,6 +111,11 @@ function ContactModal({ isModalOpen, setModalOpen }) {
     }
   }
 
+  function handleBtnPress(e) {
+    e.preventDefault();
+    setModalOpen(false);
+  }
+
   return (
     <div
       className={`contact-form__modal${isModalOpen ? " open" : ""}`}
@@ -126,7 +131,7 @@ function ContactModal({ isModalOpen, setModalOpen }) {
       <div className="btn__container">
         <button
           className="contact__btn contact__btn--close-modal"
-          onClick={() => setModalOpen(false)}
+          onClick={handleBtnPress}
         >
           OK
         </button>
