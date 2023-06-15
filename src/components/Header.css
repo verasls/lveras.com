@@ -19,6 +19,7 @@
 
 .header__logo {
   height: 4rem;
+  user-select: none;
   transition: all 0.3s;
 }
 
@@ -82,6 +83,7 @@
 
 .main-nav__link {
   position: relative;
+  user-select: none;
 }
 
 .main-nav__link::before {
