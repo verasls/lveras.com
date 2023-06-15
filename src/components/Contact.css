@@ -94,12 +94,27 @@ textarea {
   z-index: 9999;
 }
 
+.contact-form__modal:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px var(--logo-blue-2), 0 1.6rem 4.8rem rgba(0, 0, 0, 0.075);
+}
+
 .contact-form__modal.open {
   opacity: 1;
 }
 
-.modal__text {
+.txt__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 0.8rem;
+}
+
+.modal__txt {
   font-size: 1.4rem;
+  text-align: center;
 }
 
 .btn__container {

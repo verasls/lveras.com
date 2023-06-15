@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 import "./Contact.css";
 
@@ -7,7 +7,7 @@ export function Contact() {
     <section className="section-contact" id="contact">
       <div className="contact-form__card">
         <span className="subheading">Contact-me</span>
-        <h2>Thanks for reaching out! How can I help you?</h2>
+        <h2>How can I help you?</h2>
 
         <p className="text">
           If you have any issues, questions, or want me to help you with your
@@ -25,7 +25,6 @@ function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-
   const [isModalOpen, setModalOpen] = useState(false);
 
   const submitButtonRef = useRef(null);
@@ -33,19 +32,16 @@ function ContactForm() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    if (e.nativeEvent.submitter === e.target.elements.submitButton) {
-      if (name && email && message) {
-        setName("");
-        setEmail("");
-        setMessage("");
-
-        setModalOpen(true);
-      }
+    if (name && email && message) {
+      setName("");
+      setEmail("");
+      setMessage("");
+      setModalOpen(true);
     }
   }
 
   return (
-    <form className="contact-form" onSubmit={handleSubmit} noValidate>
+    <form className="contact-form" onSubmit={handleSubmit}>
       <div className="contact-form__name">
         <label htmlFor="name">Name</label>
         <input
@@ -101,10 +97,31 @@ function ContactForm() {
 }
 
 function ContactModal({ isModalOpen, setModalOpen }) {
+  const modalRef = useRef(null);
+
+  useEffect(() => {
+    if (isModalOpen && modalRef.current) {
+      modalRef.current.focus();
+    }
+  }, [isModalOpen]);
+
+  function handleKeyDown(e) {
+    if (e.key === "Escape") {
+      setModalOpen(false);
+    }
+  }
+
   return (
-    <div className={`contact-form__modal${isModalOpen ? " open" : ""}`}>
-      <p className="modal__text">Obrigado namoca por testar.</p>
-      <p className="modal__text">Te amo bebéia</p>
+    <div
+      className={`contact-form__modal${isModalOpen ? " open" : ""}`}
+      onKeyDown={handleKeyDown}
+      tabIndex={0}
+      ref={modalRef}
+    >
+      <div className="txt__container">
+        <p className="modal__txt">Your message has been sent.</p>
+        <p className="modal__txt">Thanks for reaching out!</p>
+      </div>
 
       <div className="btn__container">
         <button
