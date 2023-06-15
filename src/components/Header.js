@@ -1,4 +1,5 @@
 import { NavHashLink } from "react-router-hash-link";
+import { animateScroll as scroll } from "react-scroll";
 import { IonIcon } from "@ionic/react";
 import {
   contrastOutline,
@@ -11,9 +12,13 @@ import {
 import "./Header.css";
 
 export function Header() {
+  const scrollToTop = () => {
+    scroll.scrollToTop();
+  };
+
   return (
     <header className="header">
-      <NavHashLink to="/#hero">
+      <NavHashLink to="/#hero" smooth={true} duration={500}>
         <img
           className="header__logo"
           src="images/logo.png"
@@ -50,22 +55,42 @@ function MainNav() {
     <nav className="main-nav">
       <ul className="main-nav__list">
         <li>
-          <NavHashLink className="main-nav__link" to="/#about">
+          <NavHashLink
+            className="main-nav__link"
+            to="/#about"
+            smooth={true}
+            duration={500}
+          >
             About
           </NavHashLink>
         </li>
         <li>
-          <NavHashLink className="main-nav__link" to="/#tools">
+          <NavHashLink
+            className="main-nav__link"
+            to="/#tools"
+            smooth={true}
+            duration={500}
+          >
             Tools
           </NavHashLink>
         </li>
         <li>
-          <NavHashLink className="main-nav__link" to="/#projects">
+          <NavHashLink
+            className="main-nav__link"
+            to="/#projects"
+            smooth={true}
+            duration={500}
+          >
             Projects
           </NavHashLink>
         </li>
         <li>
-          <NavHashLink className="main-nav__link" to="/#contact">
+          <NavHashLink
+            className="main-nav__link"
+            to="/#contact"
+            smooth={true}
+            duration={500}
+          >
             Contact
           </NavHashLink>
         </li>

@@ -17,7 +17,12 @@ export function About() {
           dedicated to developing innovative solutions that bridge the gap
           between sports science, data science, and web development. Thank you
           for visiting my website, and please feel free to{" "}
-          <NavHashLink className="link" to="/#contact">
+          <NavHashLink
+            className="link"
+            to="/#contact"
+            smooth={true}
+            duration={500}
+          >
             contact me
           </NavHashLink>{" "}
           if you have any questions or if you need my help with your project.
