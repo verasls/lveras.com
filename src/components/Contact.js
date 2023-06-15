@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { useForm } from "react-hook-form";
 
 import "./Contact.css";
 
@@ -22,26 +23,25 @@ export function Contact() {
 }
 
 function ContactForm() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
+
   const [isModalOpen, setModalOpen] = useState(false);
 
   const submitButtonRef = useRef(null);
 
-  function handleSubmit(e) {
-    e.preventDefault();
-
-    if (name && email && message) {
-      setName("");
-      setEmail("");
-      setMessage("");
-      setModalOpen(true);
-    }
-  }
+  const onSubmit = (data) => {
+    console.log(data); // TODO: Handle form data submission here
+    reset();
+    setModalOpen(true);
+  };
 
   return (
-    <form className="contact-form" onSubmit={handleSubmit}>
+    <form className="contact-form" onSubmit={handleSubmit(onSubmit)} noValidate>
       <div className="contact-form__name">
         <label htmlFor="name">Name</label>
         <input
@@ -49,10 +49,9 @@ function ContactForm() {
           type="text"
           placeholder="John Smith"
           name="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
+          {...register("name", { required: true })}
         />
+        {errors.name && <span>This field is required</span>}
       </div>
 
       <div className="contact-form__email">
@@ -62,10 +61,9 @@ function ContactForm() {
           type="email"
           placeholder="me@example.com"
           name="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
+          {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
         />
+        {errors.email && <span>Please enter a valid email address</span>}
       </div>
 
       <div className="contact-form__textarea">
@@ -76,10 +74,9 @@ function ContactForm() {
           name="message"
           cols="30"
           rows="10"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          required
+          {...register("message", { required: true })}
         ></textarea>
+        {errors.message && <span>This field is required</span>}
       </div>
 
       <button
