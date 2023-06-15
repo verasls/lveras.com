@@ -64,7 +64,7 @@ export const dataScienceTools = [
         <path d="M64 14.648c-35.346 0-64 19.19-64 42.863C0 78.275 22.046 95.589 51.316 99.53V86.699c-15.55-4.89-26.166-14.693-26.166-25.991 0-16.183 21.779-29.303 48.646-29.303 26.866 0 46.693 8.975 46.693 29.303 0 10.486-5.273 17.95-14.066 22.72 1.204.908 2.22 2.072 2.904 3.419l.388.655C121.025 79.772 128 69.189 128 57.51c0-23.672-28.654-42.863-64-42.863zm20.1 74.88c-2.612.257-5.322.41-8.114.462l.002 9.63a88.362 88.362 0 0012.474-2.492l-.501-.941c-.68-1.268-1.347-2.543-2.033-3.807a41.01 41.01 0 00-1.828-2.851z"></path>
         <path
           d="M97.469 81.036s3.874 1.169 6.124 2.307c.78.396 2.132 1.184 3.106 2.22a8.388 8.388 0 011.42 2.04l15.266 25.74-24.674.01-11.537-21.666s-2.363-4.06-3.817-5.237c-1.213-.982-1.73-1.331-2.929-1.331h-5.862l.004 28.219-21.834.009V41.263h43.845s19.97.36 19.97 19.359S97.47 81.035 97.47 81.035zm-9.497-24.137l-13.218-.009-.006 12.257 13.224-.004s6.124-.019 6.124-6.235c0-6.34-6.124-6.01-6.124-6.01z"
-          fill-rule="evenodd"
+          fillRule="evenodd"
         ></path>
       </svg>
     ),
@@ -83,8 +83,8 @@ export const dataScienceTools = [
           y2="1151.089"
           gradientTransform="matrix(.563 0 0 -.568 -29.215 707.817)"
         >
-          <stop offset="0" stop-color="#5A9FD4"></stop>
-          <stop offset="1" stop-color="#306998"></stop>
+          <stop offset="0" stopColor="#5A9FD4"></stop>
+          <stop offset="1" stopColor="#306998"></stop>
         </linearGradient>
         <linearGradient
           id="python-original-b"
@@ -95,8 +95,8 @@ export const dataScienceTools = [
           y2="1149.537"
           gradientTransform="matrix(.563 0 0 -.568 -29.215 707.817)"
         >
-          <stop offset="0" stop-color="#FFD43B"></stop>
-          <stop offset="1" stop-color="#FFE873"></stop>
+          <stop offset="0" stopColor="#FFD43B"></stop>
+          <stop offset="1" stopColor="#FFE873"></stop>
         </linearGradient>
         <path
           fill="url(#python-original-a)"
@@ -116,8 +116,8 @@ export const dataScienceTools = [
           gradientTransform="matrix(0 -.24 -1.055 0 532.979 557.576)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stop-color="#B8B8B8" stop-opacity=".498"></stop>
-          <stop offset="1" stop-color="#7F7F7F" stop-opacity="0"></stop>
+          <stop offset="0" stopColor="#B8B8B8" stopOpacity=".498"></stop>
+          <stop offset="1" stopColor="#7F7F7F" stopOpacity="0"></stop>
         </radialGradient>
         <path
           opacity=".444"
@@ -141,8 +141,8 @@ export const dataScienceTools = [
         <path
           d="M61.55 128l-21.84-12.68V40.55L6.81 59.56l.08-28.32L61.55 0zM66.46 0v128l21.84-12.68V79.31l16.49 9.53-.1-24.63-16.39-9.36v-14.3l32.89 19.01-.08-28.32z"
           color="#000"
-          font-weight="400"
-          font-family="sans-serif"
+          fontWeight="400"
+          fontFamily="sans-serif"
           overflow="visible"
           fill="#ff6f00"
         ></path>
