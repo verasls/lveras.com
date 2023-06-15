@@ -39,7 +39,7 @@ function SiteOptions() {
         <IonIcon className="site-options__icon" icon={contrastOutline} />
       </li>
       <li>
-        <IonIcon className="site-options__icon" icon={languageOutline} />
+        <span className="site-options__icon site-options__icon--lang">EN</span>
       </li>
     </ul>
   );

@@ -31,6 +31,8 @@
 .social-media {
   list-style: none;
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 2.4rem;
 }
 
@@ -40,6 +42,10 @@
   cursor: pointer;
   color: var(--medium-gray);
   transition: all 0.3s;
+}
+
+.site-options__icon--lang {
+  font-size: 1.8rem;
 }
 
 .site-options__icon:hover,
