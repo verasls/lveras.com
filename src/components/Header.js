@@ -12,10 +12,6 @@ import {
 import "./Header.css";
 
 export function Header() {
-  const scrollToTop = () => {
-    scroll.scrollToTop();
-  };
-
   return (
     <header className="header">
       <NavHashLink to="/#hero" smooth={true} duration={500}>
