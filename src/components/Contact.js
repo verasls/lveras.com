@@ -48,7 +48,6 @@ function ContactForm() {
         .insert([{ name, email, message }]);
 
       if (error) {
-        // TODO: handle error
         setSuccessful(false);
         setModalOpen(true);
       } else {
@@ -57,7 +56,6 @@ function ContactForm() {
         setModalOpen(true);
       }
     } catch (error) {
-      // TODO: handle error
       setSuccessful(false);
       setModalOpen(true);
     } finally {
