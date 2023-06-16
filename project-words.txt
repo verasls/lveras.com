@@ -27,6 +27,7 @@ Granja
 Hernández
 Hernández
 impactr
+ionicon
 ionicons
 Leite
 lvmisc
@@ -52,6 +53,7 @@ skillset
 Soidan
 Soriano
 Souza
+supabase
 Tasinafo
 Teixeira
 Venturini

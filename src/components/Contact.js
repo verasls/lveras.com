@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { supabase } from "../supabaseClient";
 
 import "./Contact.css";
 
@@ -30,14 +31,34 @@ function ContactForm() {
     reset,
   } = useForm();
 
+  const [isSubmitting, setSubmitting] = useState(false);
   const [isModalOpen, setModalOpen] = useState(false);
 
   const submitButtonRef = useRef(null);
 
-  const onSubmit = (data) => {
-    console.log(data); // TODO: Handle form data submission here
-    reset();
-    setModalOpen(true);
+  const onSubmit = async (data) => {
+    const { name, email, message } = data;
+
+    try {
+      setSubmitting(true);
+
+      const { error } = await supabase
+        .from("contact-me")
+        .insert([{ name, email, message }]);
+
+      if (error) {
+        console.error("Error submitting the form: ", error);
+      } else {
+        console.log("Form submitted successfully");
+
+        reset();
+        setModalOpen(true);
+      }
+    } catch (error) {
+      console.error("Error submitting the form: ", error);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -49,6 +70,7 @@ function ContactForm() {
           type="text"
           placeholder="John Smith"
           name="name"
+          disabled={isSubmitting}
           {...register("name", { required: true })}
         />
         {errors.name && <span>This field is required</span>}
@@ -61,6 +83,7 @@ function ContactForm() {
           type="email"
           placeholder="me@example.com"
           name="email"
+          disabled={isSubmitting}
           {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
         />
         {errors.email && <span>Please enter a valid email address</span>}
@@ -74,6 +97,7 @@ function ContactForm() {
           name="message"
           cols="30"
           rows="10"
+          disabled={isSubmitting}
           {...register("message", { required: true })}
         ></textarea>
         {errors.message && <span>This field is required</span>}
@@ -83,6 +107,7 @@ function ContactForm() {
         type="submit"
         name="submitButton"
         className="contact__btn contact__btn--submit"
+        disabled={isSubmitting}
         ref={submitButtonRef}
       >
         Submit
