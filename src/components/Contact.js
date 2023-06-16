@@ -32,6 +32,7 @@ function ContactForm() {
   } = useForm();
 
   const [isSubmitting, setSubmitting] = useState(false);
+  const [isSuccessful, setSuccessful] = useState(true);
   const [isModalOpen, setModalOpen] = useState(false);
 
   const submitButtonRef = useRef(null);
@@ -47,19 +48,34 @@ function ContactForm() {
         .insert([{ name, email, message }]);
 
       if (error) {
-        console.error("Error submitting the form: ", error);
+        // TODO: handle error
+        setSuccessful(false);
+        setModalOpen(true);
       } else {
-        console.log("Form submitted successfully");
-
         reset();
+        setSuccessful(true);
         setModalOpen(true);
       }
     } catch (error) {
-      console.error("Error submitting the form: ", error);
+      // TODO: handle error
+      setSuccessful(false);
+      setModalOpen(true);
     } finally {
       setSubmitting(false);
     }
   };
+
+  const modalText = isSuccessful ? (
+    <>
+      <p className="modal__txt">Your message has been sent.</p>
+      <p className="modal__txt">Thanks for reaching out!</p>
+    </>
+  ) : (
+    <>
+      <p className="modal__txt">Oops! Something went wrong.</p>
+      <p className="modal__txt">Please try again later.</p>
+    </>
+  );
 
   return (
     <form className="contact-form" onSubmit={handleSubmit(onSubmit)} noValidate>
@@ -113,12 +129,19 @@ function ContactForm() {
         Submit
       </button>
 
-      <ContactModal isModalOpen={isModalOpen} setModalOpen={setModalOpen} />
+      {isModalOpen ? (
+        <ContactModal
+          isModalOpen={isModalOpen}
+          setModalOpen={setModalOpen}
+          isSuccessful={isSuccessful}
+          text={modalText}
+        />
+      ) : null}
     </form>
   );
 }
 
-function ContactModal({ isModalOpen, setModalOpen }) {
+function ContactModal({ isModalOpen, setModalOpen, isSuccessful, text }) {
   const modalRef = useRef(null);
 
   useEffect(() => {
@@ -140,15 +163,12 @@ function ContactModal({ isModalOpen, setModalOpen }) {
 
   return (
     <div
-      className={`contact-form__modal${isModalOpen ? " open" : ""}`}
+      className={`contact-form__modal${isSuccessful ? "" : " error"}`}
       onKeyDown={handleKeyDown}
       tabIndex={0}
       ref={modalRef}
     >
-      <div className="txt__container">
-        <p className="modal__txt">Your message has been sent.</p>
-        <p className="modal__txt">Thanks for reaching out!</p>
-      </div>
+      <div className="txt__container">{text}</div>
 
       <div className="btn__container">
         <button

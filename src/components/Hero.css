@@ -16,7 +16,7 @@
 .hero-logo__text {
   font-family: "Bebas Neue", cursive !important;
   user-select: none;
-  color: var(--black);
+  color: var(--pure-black);
   font-size: 14rem;
   line-height: 0.8;
   justify-self: end;
