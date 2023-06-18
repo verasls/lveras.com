@@ -1,7 +1,7 @@
 import { IonIcon } from "@ionic/react";
 import { logoGithub } from "ionicons/icons";
 
-import "../index.css";
+import "../styles/general.css";
 import "./Publications.css";
 
 export function Publications() {

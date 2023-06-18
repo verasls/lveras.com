@@ -4,7 +4,7 @@ import { Tools } from "../components/Tools";
 import { Projects } from "../components/Projects";
 import { Contact } from "../components/Contact";
 
-import "../index.css";
+import "../styles/general.css";
 
 export function Home() {
   return (

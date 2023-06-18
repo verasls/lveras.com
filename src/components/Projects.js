@@ -3,7 +3,7 @@ import { HashLink } from "react-router-hash-link";
 import { IonIcon } from "@ionic/react";
 import { addOutline } from "ionicons/icons";
 
-import { projectsData } from "./ProjectsData.js";
+import { projectsData } from "../data/projectsData.js";
 
 import "./Projects.css";
 

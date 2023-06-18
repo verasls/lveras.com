@@ -1,4 +1,8 @@
-import { dataScienceTools, otherTools, webDevTools } from "./ToolsData.js";
+import {
+  dataScienceTools,
+  otherTools,
+  webDevTools,
+} from "../data/toolsData.js";
 
 import "./Tools.css";
 

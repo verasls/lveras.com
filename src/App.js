@@ -4,7 +4,7 @@ import { Header } from "./components/Header";
 import { Home } from "./pages/Home";
 import { Publications } from "./pages/Publications";
 
-import "./index.css";
+import "./styles/general.css";
 
 export function App() {
   return (
