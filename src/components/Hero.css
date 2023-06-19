@@ -14,7 +14,8 @@
 }
 
 .hero-logo__text {
-  font-family: "Bebas Neue", cursive !important;
+  font-family: "Bebas Neue", sans-serif !important;
+  text-transform: uppercase;
   user-select: none;
   color: var(--pure-black);
   font-size: 14rem;
