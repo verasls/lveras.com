@@ -19,7 +19,11 @@ export const projectsData = [
       {
         id: 1,
         link: (
-          <a className="project__link-item" href="https://lveras.com/lvmisc/">
+          <a
+            className="project__link-item"
+            href="https://lveras.com/lvmisc/"
+            aria-label="lvmisc homepage"
+          >
             <IonIcon icon={globeOutline} />
           </a>
         ),
@@ -30,6 +34,7 @@ export const projectsData = [
           <a
             className="project__link-item"
             href="https://github.com/verasls/lvmisc/"
+            aria-label="lvmisc github repository"
           >
             <IonIcon icon={logoGithub} />
           </a>
@@ -54,7 +59,11 @@ export const projectsData = [
       {
         id: 1,
         link: (
-          <a className="project__link-item" href="https://lveras.com/impactr/">
+          <a
+            className="project__link-item"
+            href="https://lveras.com/impactr/"
+            aria-label="impactr homepage"
+          >
             <IonIcon icon={globeOutline} />
           </a>
         ),
@@ -65,6 +74,7 @@ export const projectsData = [
           <a
             className="project__link-item"
             href="https://github.com/verasls/impactr/"
+            aria-label="impactr github repository"
           >
             <IonIcon icon={logoGithub} />
           </a>

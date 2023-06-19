@@ -51,6 +51,7 @@ function ProjectItem({ data }) {
 
       <button
         className={`project__btn${showDescription ? " rotated" : ""}`}
+        aria-label="Show project description"
         onClick={() => {
           setShowDescription(!showDescription);
         }}

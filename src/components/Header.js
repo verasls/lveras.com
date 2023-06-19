@@ -97,7 +97,11 @@ function SocialMedia() {
   return (
     <ul className="social-media">
       <li>
-        <a className="social-media__link" href="https://github.com/verasls">
+        <a
+          className="social-media__link"
+          href="https://github.com/verasls"
+          aria-label="Lucas Veras Github profile"
+        >
           <IonIcon className="social-media__icon" icon={logoGithub} />
         </a>
       </li>
@@ -105,6 +109,7 @@ function SocialMedia() {
         <a
           className="social-media__link"
           href="https://www.linkedin.com/in/lucas-veras-17393115a/"
+          aria-label="Lucas Veras Linkedin profile"
         >
           <IonIcon className="social-media__icon" icon={logoLinkedin} />
         </a>
@@ -113,6 +118,7 @@ function SocialMedia() {
         <a
           className="social-media__link"
           href="https://twitter.com/lucasdsveras"
+          aria-label="Lucas Veras Twitter profile"
         >
           <IonIcon className="social-media__icon" icon={logoTwitter} />
         </a>

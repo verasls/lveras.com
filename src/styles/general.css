@@ -5,6 +5,7 @@
   --logo-blue-4: #4d7da6;
   --light-blue: #d8e1e9;
   --lightest-blue: #ecf0f4;
+  --link-color: #457195;
   --dark-gray: #444;
   --medium-gray: #555;
   --light-gray: #777;
@@ -93,8 +94,7 @@ h3 {
 .link:link,
 .link:visited {
   text-decoration: none;
-  /* TODO: change the color to improve accessibility */
-  color: var(--logo-blue-4);
+  color: var(--link-color);
 }
 
 .link::before {
