@@ -26,6 +26,7 @@
 .tools__list {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   gap: 2.4rem;
 }
 
