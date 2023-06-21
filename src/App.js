@@ -10,10 +10,14 @@ import "./styles/general.css";
 
 export function App() {
   const [isHeaderSticky, setHeaderSticky] = useState(false);
+  const [isOnPublicationsPage, setOnPublicationsPage] = useState(false);
 
   return (
     <BrowserRouter>
-      <Header isHeaderSticky={isHeaderSticky} />
+      <Header
+        isHeaderSticky={isHeaderSticky}
+        isOnPublicationsPage={isOnPublicationsPage}
+      />
       <main>
         <Routes>
           <Route
@@ -25,7 +29,15 @@ export function App() {
               />
             }
           />
-          <Route path="/publications" element={<Publications />} />
+          <Route
+            path="/publications"
+            element={
+              <Publications
+                setHeaderSticky={setHeaderSticky}
+                setOnPublicationsPage={setOnPublicationsPage}
+              />
+            }
+          />
         </Routes>
       </main>
       <Footer />

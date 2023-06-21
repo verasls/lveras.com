@@ -1,10 +1,31 @@
+import { useEffect, useCallback } from "react";
+
 import { IonIcon } from "@ionic/react";
 import { logoGithub } from "ionicons/icons";
 
 import "../styles/general.css";
 import "./Publications.css";
 
-export function Publications() {
+export function Publications({ setHeaderSticky, setOnPublicationsPage }) {
+  const handleScroll = useCallback(() => {
+    const scrollPosition = window.pageYOffset;
+    setHeaderSticky(scrollPosition > 0);
+  }, [setHeaderSticky]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [handleScroll]);
+
+  useEffect(() => {
+    setOnPublicationsPage(true);
+    return () => {
+      setOnPublicationsPage(false);
+    };
+  }, [setOnPublicationsPage]);
+
   return (
     <>
       <section className="publications" id="publications">

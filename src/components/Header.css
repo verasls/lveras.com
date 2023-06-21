@@ -6,7 +6,8 @@
   background-color: var(--lightest-blue);
 }
 
-.header.sticky {
+.header.sticky,
+.header.on-publications {
   position: fixed;
   top: 0;
   bottom: 0;

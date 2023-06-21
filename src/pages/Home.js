@@ -21,6 +21,7 @@ export function Home({ isHeaderSticky, setHeaderSticky }) {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [handleScroll]);
+
   return (
     <>
       <Hero isHeaderSticky={isHeaderSticky} />

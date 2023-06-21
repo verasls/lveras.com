@@ -6,9 +6,13 @@ import { contrastOutline } from "ionicons/icons";
 
 import "./Header.css";
 
-export function Header({ isHeaderSticky }) {
+export function Header({ isHeaderSticky, isOnPublicationsPage }) {
   return (
-    <header className={`header${isHeaderSticky ? " sticky" : ""}`}>
+    <header
+      className={`header${isHeaderSticky ? " sticky" : ""}${
+        isOnPublicationsPage ? " on-publications" : ""
+      }`}
+    >
       <LogoLink />
       <MainNav />
       <SiteOptions />
