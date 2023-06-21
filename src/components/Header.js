@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 import { NavHashLink } from "react-router-hash-link";
 import { IonIcon } from "@ionic/react";
 import { contrastOutline } from "ionicons/icons";
@@ -7,16 +9,29 @@ import "./Header.css";
 export function Header({ isHeaderSticky }) {
   return (
     <header className={`header${isHeaderSticky ? " sticky" : ""}`}>
-      <Logo />
+      <LogoLink />
       <MainNav />
       <SiteOptions />
     </header>
   );
 }
 
-function Logo() {
+function LogoLink() {
+  useEffect(() => {
+    const scrollToTop = () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
+    const logoLinkElement = document.querySelector(".header__logo");
+    logoLinkElement.addEventListener("click", scrollToTop);
+
+    return () => {
+      logoLinkElement.removeEventListener("click", scrollToTop);
+    };
+  }, []);
+
   return (
-    <NavHashLink to="/#hero" smooth={true} duration={500}>
+    <NavHashLink to="" smooth={true} duration={500}>
       <img
         className="header__logo"
         src="images/logo.png"
