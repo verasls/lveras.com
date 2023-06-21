@@ -96,13 +96,8 @@ function MainNav() {
 
 function SiteOptions() {
   return (
-    <ul className="site-options">
-      <li>
-        <span className="site-options__icon site-options__icon--lang">EN</span>
-      </li>
-      <li>
-        <IonIcon className="site-options__icon" icon={contrastOutline} />
-      </li>
-    </ul>
+    <div className="site-options">
+      <IonIcon className="site-options__icon" icon={contrastOutline} />
+    </div>
   );
 }

@@ -88,37 +88,17 @@
 
 .site-options {
   padding-right: 1.2rem;
-  list-style: none;
   display: flex;
   align-items: center;
   user-select: none;
 }
 
 .site-options__icon {
-  font-size: 1.8rem;
+  font-size: 2.4rem;
   padding: 0.8rem;
-  color: var(--dark-gray);
-  cursor: pointer;
-}
-
-.site-options {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.6rem;
-}
-
-.site-options__icon {
-  font-size: 2rem;
-  cursor: pointer;
   color: var(--medium-gray);
+  cursor: pointer;
   transition: all 0.3s;
-}
-
-.site-options__icon--lang {
-  display: block;
-  font-size: 1.8rem;
 }
 
 .site-options__icon:hover,
