@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavHashLink } from "react-router-hash-link";
 import { IonIcon } from "@ionic/react";
 import { contrastOutline } from "ionicons/icons";
 
@@ -16,13 +16,13 @@ export function Header() {
 
 function Logo() {
   return (
-    <Link to="/" smooth={true} duration={500}>
+    <NavHashLink to="/#hero" smooth={true} duration={500}>
       <img
         className="header__logo"
         src="images/logo.png"
         alt="Lucas Veras logo"
       />
-    </Link>
+    </NavHashLink>
   );
 }
 
@@ -31,44 +31,44 @@ function MainNav() {
     <nav className="main-nav">
       <ul className="main-nav__list">
         <li>
-          <Link
+          <NavHashLink
             className="main-nav__link"
-            to="/about"
+            to="/#about"
             smooth={true}
             duration={500}
           >
             About
-          </Link>
+          </NavHashLink>
         </li>
         <li>
-          <Link
+          <NavHashLink
             className="main-nav__link"
-            to="/tools"
+            to="/#tools"
             smooth={true}
             duration={500}
           >
             Tools
-          </Link>
+          </NavHashLink>
         </li>
         <li>
-          <Link
+          <NavHashLink
             className="main-nav__link"
-            to="/projects"
+            to="/#projects"
             smooth={true}
             duration={500}
           >
             Projects
-          </Link>
+          </NavHashLink>
         </li>
         <li>
-          <Link
+          <NavHashLink
             className="main-nav__link"
-            to="/contact"
+            to="/#contact"
             smooth={true}
             duration={500}
           >
             Contact
-          </Link>
+          </NavHashLink>
         </li>
       </ul>
     </nav>
