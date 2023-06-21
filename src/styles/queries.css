@@ -1,0 +1,28 @@
+@media (max-width: 1008px) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media (max-width: 880px) {
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .contact-form__name,
+  .contact-form__email {
+    grid-column: 1/-1;
+  }
+}
+
+@media (max-width: 720px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 605px) {
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

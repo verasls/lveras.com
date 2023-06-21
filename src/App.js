@@ -7,6 +7,7 @@ import { Home } from "./pages/Home";
 import { Publications } from "./pages/Publications";
 
 import "./styles/general.css";
+import "./styles/queries.css";
 
 export function App() {
   const [isHeaderSticky, setHeaderSticky] = useState(false);
