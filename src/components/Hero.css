@@ -3,6 +3,10 @@
   background-color: var(--lightest-blue);
 }
 
+.section-hero.sticky {
+  margin-top: 6.4rem;
+}
+
 .hero-logo {
   max-width: 130rem;
   margin: 5.2rem auto;

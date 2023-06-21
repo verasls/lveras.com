@@ -1,8 +1,11 @@
 import "./Hero.css";
 
-export function Hero() {
+export function Hero({ isHeaderSticky }) {
   return (
-    <section className="section-hero" id="hero">
+    <section
+      className={`section-hero${isHeaderSticky ? " sticky" : ""}`}
+      id="hero"
+    >
       <div className="hero-logo">
         <div className="hero-logo__text">
           <span className="hero-logo__letter">l</span>
