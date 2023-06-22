@@ -26,6 +26,11 @@
 }
 
 @media (max-width: 605px) {
+  .about__list {
+    grid-template-columns: 1fr;
+    padding: 9.6rem;
+  }
+
   .projects {
     grid-template-columns: repeat(2, 1fr);
   }
