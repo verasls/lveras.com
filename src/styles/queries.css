@@ -55,14 +55,6 @@
     visibility: visible;
   }
 
-  .nav-open .mobile-nav__icon--close {
-    display: block;
-  }
-
-  .nav-open .mobile-nav__icon--open {
-    display: none;
-  }
-
   .main-nav__list {
     flex-direction: column;
     align-items: center;

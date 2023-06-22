@@ -8,6 +8,7 @@ import "./Header.css";
 
 export function Header({ isHeaderSticky, isOnPublicationsPage }) {
   const [isMobile, setMobile] = useState(false);
+  const [isMobileNavOpen, setMobileNavOpen] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -27,28 +28,18 @@ export function Header({ isHeaderSticky, isOnPublicationsPage }) {
     <header
       className={`header${isHeaderSticky ? " sticky" : ""}${
         isOnPublicationsPage ? " on-publications" : ""
-      }`}
+      }${isMobileNavOpen ? " nav-open" : ""}`}
     >
       <LogoLink />
       <MainNav isMobile={isMobile} />
       {!isMobile ? <SiteOptions /> : null}
-      {isMobile ? <MobileNav /> : null}
+      {isMobile ? (
+        <MobileNav
+          isMobileNavOpen={isMobileNavOpen}
+          setMobileNavOpen={setMobileNavOpen}
+        />
+      ) : null}
     </header>
-  );
-}
-
-function MobileNav() {
-  return (
-    <button className="mobile-nav__btn">
-      <IonIcon
-        className="mobile-nav__icon mobile-nav__icon--open"
-        icon={menuOutline}
-      />
-      <IonIcon
-        className="mobile-nav__icon mobile-nav__icon--close"
-        icon={closeOutline}
-      />
-    </button>
   );
 }
 
@@ -136,5 +127,20 @@ function SiteOptions() {
     <div className="site-options">
       <IonIcon className="site-options__icon" icon={contrastOutline} />
     </div>
+  );
+}
+
+function MobileNav({ isMobileNavOpen, setMobileNavOpen }) {
+  return (
+    <button
+      className="mobile-nav__btn"
+      onClick={() => setMobileNavOpen(!isMobileNavOpen)}
+    >
+      {isMobileNavOpen ? (
+        <IonIcon className="mobile-nav__icon" icon={closeOutline} />
+      ) : (
+        <IonIcon className="mobile-nav__icon" icon={menuOutline} />
+      )}
+    </button>
   );
 }
