@@ -75,3 +75,22 @@
     padding-right: 0;
   }
 }
+
+@media (max-width: 575px) {
+  .hero-logo {
+    grid-template-columns: 1fr;
+    gap: 3.2rem;
+  }
+
+  .hero-logo__text {
+    grid-row: 2;
+  }
+  .hero-logo__boxes {
+    grid-row: 1;
+  }
+
+  .hero-logo__text,
+  .hero-logo__boxes {
+    justify-self: center;
+  }
+}
