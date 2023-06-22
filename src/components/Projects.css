@@ -92,16 +92,20 @@
   flex-direction: column;
   gap: 1.2rem;
   position: absolute;
-  opacity: 0;
   padding: 2.4rem;
   top: 0;
   left: 0;
   transform: translateY(0);
   transition: all 0.8s ease;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
 }
 
 .project__description.active {
   opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
   z-index: 99;
   transform: translateY(15px);
   transition-delay: 0.5s;
