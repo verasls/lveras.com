@@ -1,12 +1,28 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import { NavHashLink } from "react-router-hash-link";
 import { IonIcon } from "@ionic/react";
-import { contrastOutline } from "ionicons/icons";
+import { closeOutline, contrastOutline, menuOutline } from "ionicons/icons";
 
 import "./Header.css";
 
 export function Header({ isHeaderSticky, isOnPublicationsPage }) {
+  const [isMobile, setMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setMobile(window.innerWidth < 605);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <header
       className={`header${isHeaderSticky ? " sticky" : ""}${
@@ -14,9 +30,25 @@ export function Header({ isHeaderSticky, isOnPublicationsPage }) {
       }`}
     >
       <LogoLink />
-      <MainNav />
-      <SiteOptions />
+      <MainNav isMobile={isMobile} />
+      {!isMobile ? <SiteOptions /> : null}
+      {isMobile ? <MobileNav /> : null}
     </header>
+  );
+}
+
+function MobileNav() {
+  return (
+    <button className="mobile-nav__btn">
+      <IonIcon
+        className="mobile-nav__icon mobile-nav__icon--open"
+        icon={menuOutline}
+      />
+      <IonIcon
+        className="mobile-nav__icon mobile-nav__icon--close"
+        icon={closeOutline}
+      />
+    </button>
   );
 }
 
@@ -45,7 +77,7 @@ function LogoLink() {
   );
 }
 
-function MainNav() {
+function MainNav({ isMobile }) {
   return (
     <nav className="main-nav">
       <ul className="main-nav__list">
@@ -89,6 +121,11 @@ function MainNav() {
             Contact
           </NavHashLink>
         </li>
+        {isMobile ? (
+          <li>
+            <SiteOptions />
+          </li>
+        ) : null}
       </ul>
     </nav>
   );

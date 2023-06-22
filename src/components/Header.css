@@ -4,6 +4,7 @@
   justify-content: space-between;
   min-height: 6.4rem;
   background-color: var(--lightest-blue);
+  position: relative;
 }
 
 .header.sticky,
@@ -94,7 +95,7 @@
 }
 
 .site-options__icon {
-  font-size: 2.4rem;
+  font-size: 3rem;
   padding: 0.8rem;
   color: var(--medium-gray);
   cursor: pointer;
@@ -105,4 +106,20 @@
 .site-options__icon:active {
   color: var(--logo-blue-2);
   transform: scale(1.1);
+}
+
+.mobile-nav__btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding-right: 1.2rem;
+}
+
+.mobile-nav__icon {
+  font-size: 3.6rem;
+  color: var(--medium-gray);
+}
+
+.mobile-nav__icon--close {
+  display: none;
 }
