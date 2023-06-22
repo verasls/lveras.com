@@ -31,7 +31,11 @@ export function Header({ isHeaderSticky, isOnPublicationsPage }) {
       }${isMobileNavOpen ? " nav-open" : ""}`}
     >
       <LogoLink />
-      <MainNav isMobile={isMobile} />
+      <MainNav
+        isMobile={isMobile}
+        isMobileNavOpen={isMobileNavOpen}
+        setMobileNavOpen={setMobileNavOpen}
+      />
       {!isMobile ? <SiteOptions /> : null}
       {isMobile ? (
         <MobileNav
@@ -68,7 +72,9 @@ function LogoLink() {
   );
 }
 
-function MainNav({ isMobile }) {
+function MainNav({ isMobile, isMobileNavOpen, setMobileNavOpen }) {
+  const handleClick = () => setMobileNavOpen(!isMobileNavOpen);
+
   return (
     <nav className="main-nav">
       <ul className="main-nav__list">
@@ -78,6 +84,7 @@ function MainNav({ isMobile }) {
             to="/#about"
             smooth={true}
             duration={500}
+            onClick={handleClick}
           >
             About
           </NavHashLink>
@@ -88,6 +95,7 @@ function MainNav({ isMobile }) {
             to="/#tools"
             smooth={true}
             duration={500}
+            onClick={handleClick}
           >
             Tools
           </NavHashLink>
@@ -98,6 +106,7 @@ function MainNav({ isMobile }) {
             to="/#projects"
             smooth={true}
             duration={500}
+            onClick={handleClick}
           >
             Projects
           </NavHashLink>
@@ -108,6 +117,7 @@ function MainNav({ isMobile }) {
             to="/#contact"
             smooth={true}
             duration={500}
+            onClick={handleClick}
           >
             Contact
           </NavHashLink>
