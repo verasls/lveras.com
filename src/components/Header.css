@@ -194,3 +194,15 @@
   padding-right: 1.2rem;
   cursor: pointer;
 }
+
+.main-nav__list .site-options.active,
+.main-nav__list .dark-mode__menu {
+  background-color: var(--lightest-blue);
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.main-nav__list .dark-mode__menu {
+  border-radius: 10px;
+}
