@@ -100,7 +100,8 @@
   background-color: var(--pure-white);
 }
 
-.site-options.active.sticky {
+.site-options.active.sticky,
+.site-options.active.on-publications {
   background-color: var(--lightest-blue);
 }
 
@@ -153,7 +154,8 @@
   transform: translateX(calc(-100% + 4.5rem));
 }
 
-.dark-mode__menu.sticky {
+.dark-mode__menu.sticky,
+.dark-mode__menu.on-publications {
   background-color: var(--lightest-blue);
 }
 

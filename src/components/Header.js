@@ -42,8 +42,14 @@ export function Header({ isHeaderSticky, isOnPublicationsPage }) {
         isMobileNavOpen={isMobileNavOpen}
         setMobileNavOpen={setMobileNavOpen}
         isHeaderSticky={isHeaderSticky}
+        isOnPublicationsPage={isOnPublicationsPage}
       />
-      {!isMobile ? <SiteOptions isHeaderSticky={isHeaderSticky} /> : null}
+      {!isMobile ? (
+        <SiteOptions
+          isHeaderSticky={isHeaderSticky}
+          isOnPublicationsPage={isOnPublicationsPage}
+        />
+      ) : null}
       {isMobile ? (
         <MobileNav
           isMobileNavOpen={isMobileNavOpen}
@@ -84,6 +90,7 @@ function MainNav({
   isMobileNavOpen,
   setMobileNavOpen,
   isHeaderSticky,
+  isOnPublicationsPage,
 }) {
   const handleClick = () => setMobileNavOpen(!isMobileNavOpen);
 
@@ -136,7 +143,10 @@ function MainNav({
         </li>
         {isMobile ? (
           <li>
-            <SiteOptions isHeaderSticky={isHeaderSticky} />
+            <SiteOptions
+              isHeaderSticky={isHeaderSticky}
+              isOnPublicationsPage={isOnPublicationsPage}
+            />
           </li>
         ) : null}
       </ul>
@@ -144,7 +154,7 @@ function MainNav({
   );
 }
 
-function SiteOptions({ isHeaderSticky }) {
+function SiteOptions({ isHeaderSticky, isOnPublicationsPage }) {
   const [isActive, setActive] = useState(false);
 
   const darkModeData = [
@@ -157,7 +167,7 @@ function SiteOptions({ isHeaderSticky }) {
     <div
       className={`site-options${isActive ? " active" : ""}${
         isHeaderSticky ? " sticky" : ""
-      }`}
+      }${isOnPublicationsPage ? " on-publications" : ""}`}
     >
       <IonIcon
         className="site-options__icon"
@@ -167,15 +177,23 @@ function SiteOptions({ isHeaderSticky }) {
         }}
       />
       {isActive ? (
-        <DarkModeMenu data={darkModeData} isHeaderSticky={isHeaderSticky} />
+        <DarkModeMenu
+          data={darkModeData}
+          isHeaderSticky={isHeaderSticky}
+          isOnPublicationsPage={isOnPublicationsPage}
+        />
       ) : null}
     </div>
   );
 }
 
-function DarkModeMenu({ data, isHeaderSticky }) {
+function DarkModeMenu({ data, isHeaderSticky, isOnPublicationsPage }) {
   return (
-    <ul className={`dark-mode__menu${isHeaderSticky ? " sticky" : ""}`}>
+    <ul
+      className={`dark-mode__menu${isHeaderSticky ? " sticky" : ""}${
+        isOnPublicationsPage ? " on-publications" : ""
+      }`}
+    >
       {data.map((data) => (
         <DarkModeItem key={data.title} data={data} />
       ))}
