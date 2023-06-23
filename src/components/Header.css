@@ -98,6 +98,7 @@
 
 .site-options.active {
   background-color: var(--pure-white);
+  box-shadow: 0 2.4rem 3.2rem 0 rgba(0, 0, 0, 0.075);
 }
 
 .site-options.active.sticky,
@@ -148,6 +149,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 0.8rem;
+  box-shadow: 0 2.4rem 3.2rem 0 rgba(0, 0, 0, 0.075);
   position: absolute;
   top: 100%;
   left: 0;
