@@ -48,6 +48,7 @@ export function Header({ isHeaderSticky, isOnPublicationsPage }) {
         <SiteOptions
           isHeaderSticky={isHeaderSticky}
           isOnPublicationsPage={isOnPublicationsPage}
+          isMobileNavOpen={isMobileNavOpen}
         />
       ) : null}
       {isMobile ? (
@@ -146,6 +147,7 @@ function MainNav({
             <SiteOptions
               isHeaderSticky={isHeaderSticky}
               isOnPublicationsPage={isOnPublicationsPage}
+              isMobileNavOpen={isMobileNavOpen}
             />
           </li>
         ) : null}
@@ -154,8 +156,18 @@ function MainNav({
   );
 }
 
-function SiteOptions({ isHeaderSticky, isOnPublicationsPage }) {
+function SiteOptions({
+  isHeaderSticky,
+  isOnPublicationsPage,
+  isMobileNavOpen,
+}) {
   const [isActive, setActive] = useState(false);
+
+  useEffect(() => {
+    if (!isMobileNavOpen) {
+      setActive(false);
+    }
+  }, [isMobileNavOpen]);
 
   const darkModeData = [
     { title: "OS Default", icon: desktopOutline },
