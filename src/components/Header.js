@@ -1,8 +1,14 @@
 import { useState, useEffect } from "react";
-
 import { NavHashLink } from "react-router-hash-link";
 import { IonIcon } from "@ionic/react";
-import { closeOutline, contrastOutline, menuOutline } from "ionicons/icons";
+import {
+  closeOutline,
+  contrastOutline,
+  menuOutline,
+  desktopOutline,
+  sunnyOutline,
+  moonOutline,
+} from "ionicons/icons";
 
 import "./Header.css";
 
@@ -35,8 +41,9 @@ export function Header({ isHeaderSticky, isOnPublicationsPage }) {
         isMobile={isMobile}
         isMobileNavOpen={isMobileNavOpen}
         setMobileNavOpen={setMobileNavOpen}
+        isHeaderSticky={isHeaderSticky}
       />
-      {!isMobile ? <SiteOptions /> : null}
+      {!isMobile ? <SiteOptions isHeaderSticky={isHeaderSticky} /> : null}
       {isMobile ? (
         <MobileNav
           isMobileNavOpen={isMobileNavOpen}
@@ -72,7 +79,12 @@ function LogoLink() {
   );
 }
 
-function MainNav({ isMobile, isMobileNavOpen, setMobileNavOpen }) {
+function MainNav({
+  isMobile,
+  isMobileNavOpen,
+  setMobileNavOpen,
+  isHeaderSticky,
+}) {
   const handleClick = () => setMobileNavOpen(!isMobileNavOpen);
 
   return (
@@ -124,7 +136,7 @@ function MainNav({ isMobile, isMobileNavOpen, setMobileNavOpen }) {
         </li>
         {isMobile ? (
           <li>
-            <SiteOptions />
+            <SiteOptions isHeaderSticky={isHeaderSticky} />
           </li>
         ) : null}
       </ul>
@@ -132,11 +144,51 @@ function MainNav({ isMobile, isMobileNavOpen, setMobileNavOpen }) {
   );
 }
 
-function SiteOptions() {
+function SiteOptions({ isHeaderSticky }) {
+  const [isActive, setActive] = useState(false);
+
+  const darkModeData = [
+    { title: "OS Default", icon: desktopOutline },
+    { title: "Light", icon: sunnyOutline },
+    { title: "Dark", icon: moonOutline },
+  ];
+
   return (
-    <div className="site-options">
-      <IonIcon className="site-options__icon" icon={contrastOutline} />
+    <div
+      className={`site-options${isActive ? " active" : ""}${
+        isHeaderSticky ? " sticky" : ""
+      }`}
+    >
+      <IonIcon
+        className="site-options__icon"
+        icon={contrastOutline}
+        onClick={() => {
+          setActive(!isActive);
+        }}
+      />
+      {isActive ? (
+        <DarkModeMenu data={darkModeData} isHeaderSticky={isHeaderSticky} />
+      ) : null}
     </div>
+  );
+}
+
+function DarkModeMenu({ data, isHeaderSticky }) {
+  return (
+    <ul className={`dark-mode__menu${isHeaderSticky ? " sticky" : ""}`}>
+      {data.map((data) => (
+        <DarkModeItem key={data.title} data={data} />
+      ))}
+    </ul>
+  );
+}
+
+function DarkModeItem({ data }) {
+  return (
+    <li className="dark-mode__item">
+      <IonIcon className="dark-mode__icon" icon={data.icon} />
+      <span className="dark-mode__title">{data.title}</span>
+    </li>
   );
 }
 
