@@ -115,7 +115,7 @@
 }
 
 .main-nav__list .site-options {
-  padding-right: 0;
+  margin-right: 0;
 }
 
 .site-options__icon:hover,
