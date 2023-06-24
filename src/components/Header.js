@@ -83,6 +83,12 @@ function MainNav({
 }) {
   const handleClick = () => setMobileNavOpen(!isMobileNavOpen);
 
+  const scrollWithOffset = (el) => {
+    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+    const yOffset = -50;
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
+  };
+
   return (
     <nav className="main-nav">
       <ul className="main-nav__list">
@@ -103,6 +109,7 @@ function MainNav({
             to="/#tools"
             smooth={true}
             duration={500}
+            scroll={(el) => scrollWithOffset(el)}
             onClick={handleClick}
           >
             Tools
@@ -114,6 +121,7 @@ function MainNav({
             to="/#projects"
             smooth={true}
             duration={500}
+            scroll={(el) => scrollWithOffset(el)}
             onClick={handleClick}
           >
             Projects
@@ -125,6 +133,7 @@ function MainNav({
             to="/#contact"
             smooth={true}
             duration={500}
+            scroll={(el) => scrollWithOffset(el)}
             onClick={handleClick}
           >
             Contact
