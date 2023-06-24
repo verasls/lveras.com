@@ -63,21 +63,8 @@ export function Header({ isHeaderSticky, isOnPublicationsPage }) {
 }
 
 function LogoLink() {
-  useEffect(() => {
-    const scrollToTop = () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    };
-
-    const logoLinkElement = document.querySelector(".header__logo");
-    logoLinkElement.addEventListener("click", scrollToTop);
-
-    return () => {
-      logoLinkElement.removeEventListener("click", scrollToTop);
-    };
-  }, []);
-
   return (
-    <NavHashLink to="" smooth={true} duration={500}>
+    <NavHashLink to="/#top" smooth={true} duration={500}>
       <img
         className="header__logo"
         src="images/logo.png"
