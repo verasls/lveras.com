@@ -8,6 +8,7 @@ import {
   desktopOutline,
   sunnyOutline,
   moonOutline,
+  phonePortraitOutline,
 } from "ionicons/icons";
 
 import "./Header.css";
@@ -162,6 +163,7 @@ function SiteOptions({
   isMobileNavOpen,
 }) {
   const [isActive, setActive] = useState(false);
+  const [isMobile, setMobile] = useState(false);
 
   useEffect(() => {
     if (!isMobileNavOpen) {
@@ -169,8 +171,25 @@ function SiteOptions({
     }
   }, [isMobileNavOpen]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setMobile(window.innerWidth < 605);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const darkModeData = [
-    { title: "OS Default", icon: desktopOutline },
+    {
+      title: "OS Default",
+      icon: isMobile ? phonePortraitOutline : desktopOutline,
+    },
     { title: "Light", icon: sunnyOutline },
     { title: "Dark", icon: moonOutline },
   ];
