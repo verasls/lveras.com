@@ -147,7 +147,8 @@
 }
 
 .dark-mode__menu.sticky,
-.dark-mode__menu.on-publications {
+.dark-mode__menu.on-publications,
+.header.on-publications .dark-mode__menu {
   background-color: var(--lightest-blue);
 }
 

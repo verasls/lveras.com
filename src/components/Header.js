@@ -48,6 +48,7 @@ export function Header({
         setMobileNavOpen={setMobileNavOpen}
         isHeaderSticky={isHeaderSticky}
         isOnPublicationsPage={isOnPublicationsPage}
+        isOnNotFoundPage={isOnNotFoundPage}
       />
       {!isMobile ? (
         <SiteOptions
@@ -84,6 +85,7 @@ function MainNav({
   setMobileNavOpen,
   isHeaderSticky,
   isOnPublicationsPage,
+  isOnNotFoundPage,
 }) {
   const handleClick = () => setMobileNavOpen(!isMobileNavOpen);
 
@@ -148,6 +150,7 @@ function MainNav({
             <SiteOptions
               isHeaderSticky={isHeaderSticky}
               isOnPublicationsPage={isOnPublicationsPage}
+              isOnNotFoundPage={isOnNotFoundPage}
               isMobileNavOpen={isMobileNavOpen}
             />
           </li>
@@ -160,6 +163,7 @@ function MainNav({
 function SiteOptions({
   isHeaderSticky,
   isOnPublicationsPage,
+  isOnNotFoundPage,
   isMobileNavOpen,
 }) {
   const [isActive, setActive] = useState(false);
@@ -212,17 +216,23 @@ function SiteOptions({
           data={darkModeData}
           isHeaderSticky={isHeaderSticky}
           isOnPublicationsPage={isOnPublicationsPage}
+          isOnNotFoundPage={isOnNotFoundPage}
         />
       ) : null}
     </div>
   );
 }
 
-function DarkModeMenu({ data, isHeaderSticky, isOnPublicationsPage }) {
+function DarkModeMenu({
+  data,
+  isHeaderSticky,
+  isOnPublicationsPage,
+  isOnNotFoundPage,
+}) {
   return (
     <ul
       className={`dark-mode__menu${isHeaderSticky ? " sticky" : ""}${
-        isOnPublicationsPage ? " on-publications" : ""
+        isOnPublicationsPage || isOnNotFoundPage ? " on-publications" : ""
       }`}
     >
       {data.map((data) => (
