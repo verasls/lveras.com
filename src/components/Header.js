@@ -13,7 +13,11 @@ import {
 
 import "./Header.css";
 
-export function Header({ isHeaderSticky, isOnPublicationsPage }) {
+export function Header({
+  isHeaderSticky,
+  isOnPublicationsPage,
+  isOnNotFoundPage,
+}) {
   const [isMobile, setMobile] = useState(false);
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);
 
@@ -34,7 +38,7 @@ export function Header({ isHeaderSticky, isOnPublicationsPage }) {
   return (
     <header
       className={`header${isHeaderSticky ? " sticky" : ""}${
-        isOnPublicationsPage ? " on-publications" : ""
+        isOnPublicationsPage || isOnNotFoundPage ? " on-publications" : ""
       }${isMobileNavOpen ? " nav-open" : ""}`}
     >
       <LogoLink />

@@ -109,15 +109,15 @@
     gap: 3.2rem;
   }
 
-  .hero-logo__text {
+  .logo__text {
     grid-row: 2;
   }
-  .hero-logo__boxes {
+  .logo__boxes {
     grid-row: 1;
   }
 
-  .hero-logo__text,
-  .hero-logo__boxes {
+  .logo__text,
+  .logo__boxes {
     justify-self: center;
   }
 }
@@ -172,5 +172,16 @@
 
   .new-project__txt {
     font-size: 1.6rem;
+  }
+
+  .not-found__numbers {
+    gap: 1.8rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .box--404 {
+    height: 3rem;
+    width: 3rem;
   }
 }

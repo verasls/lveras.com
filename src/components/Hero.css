@@ -30,7 +30,7 @@
   gap: 1.8rem;
 }
 
-.hero-logo__text {
+.logo__text {
   font-family: "Bebas Neue", sans-serif !important;
   text-transform: uppercase;
   user-select: none;
@@ -41,16 +41,16 @@
   margin-bottom: -1.6rem;
 }
 
-.hero-logo__letter {
+.logo__letter {
   display: inline-block;
   transition: 0.3s;
 }
 
-.hero-logo__letter:hover {
+.logo__letter:hover {
   transform: scale(1.1);
 }
 
-.hero-logo__boxes {
+.logo__boxes {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);

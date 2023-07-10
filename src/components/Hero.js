@@ -10,20 +10,20 @@ export function Hero({ isHeaderSticky }) {
         id="hero"
       >
         <div className="hero-logo">
-          <div className="hero-logo__text">
-            <span className="hero-logo__letter">l</span>
-            <span className="hero-logo__letter">u</span>
-            <span className="hero-logo__letter">c</span>
-            <span className="hero-logo__letter">a</span>
-            <span className="hero-logo__letter">s</span>
+          <div className="logo__text">
+            <span className="logo__letter">l</span>
+            <span className="logo__letter">u</span>
+            <span className="logo__letter">c</span>
+            <span className="logo__letter">a</span>
+            <span className="logo__letter">s</span>
             <br />
-            <span className="hero-logo__letter">v</span>
-            <span className="hero-logo__letter">e</span>
-            <span className="hero-logo__letter">r</span>
-            <span className="hero-logo__letter">a</span>
-            <span className="hero-logo__letter">s</span>
+            <span className="logo__letter">v</span>
+            <span className="logo__letter">e</span>
+            <span className="logo__letter">r</span>
+            <span className="logo__letter">a</span>
+            <span className="logo__letter">s</span>
           </div>
-          <div className="hero-logo__boxes">
+          <div className="logo__boxes">
             <div className="box box--col1 box--row1"></div>
             <div className="box box--col1 box--row2"></div>
             <div className="box box--col1 box--row3"></div>
