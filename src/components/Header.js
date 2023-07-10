@@ -196,9 +196,9 @@ function SiteOptions({
 
   return (
     <div
-      className={`site-options${isActive ? " active" : ""}${
-        isHeaderSticky ? " sticky" : ""
-      }${isOnPublicationsPage ? " on-publications" : ""}`}
+      className={`site-options${isHeaderSticky ? " sticky" : ""}${
+        isOnPublicationsPage ? " on-publications" : ""
+      }`}
     >
       <IonIcon
         className="site-options__icon"
