@@ -50,13 +50,13 @@ export function Header({
         isOnPublicationsPage={isOnPublicationsPage}
         isOnNotFoundPage={isOnNotFoundPage}
       />
-      {!isMobile ? (
-        <SiteOptions
-          isHeaderSticky={isHeaderSticky}
-          isOnPublicationsPage={isOnPublicationsPage}
-          isMobileNavOpen={isMobileNavOpen}
-        />
-      ) : null}
+      {/* {!isMobile ? ( */}
+      {/*   <SiteOptions */}
+      {/*     isHeaderSticky={isHeaderSticky} */}
+      {/*     isOnPublicationsPage={isOnPublicationsPage} */}
+      {/*     isMobileNavOpen={isMobileNavOpen} */}
+      {/*   /> */}
+      {/* ) : null} */}
       {isMobile ? (
         <MobileNav
           isMobileNavOpen={isMobileNavOpen}
@@ -145,16 +145,16 @@ function MainNav({
             Contact
           </NavHashLink>
         </li>
-        {isMobile ? (
-          <li>
-            <SiteOptions
-              isHeaderSticky={isHeaderSticky}
-              isOnPublicationsPage={isOnPublicationsPage}
-              isOnNotFoundPage={isOnNotFoundPage}
-              isMobileNavOpen={isMobileNavOpen}
-            />
-          </li>
-        ) : null}
+        {/* {isMobile ? ( */}
+        {/*   <li> */}
+        {/*     <SiteOptions */}
+        {/*       isHeaderSticky={isHeaderSticky} */}
+        {/*       isOnPublicationsPage={isOnPublicationsPage} */}
+        {/*       isOnNotFoundPage={isOnNotFoundPage} */}
+        {/*       isMobileNavOpen={isMobileNavOpen} */}
+        {/*     /> */}
+        {/*   </li> */}
+        {/* ) : null} */}
       </ul>
     </nav>
   );
