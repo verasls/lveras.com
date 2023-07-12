@@ -60,11 +60,6 @@
   letter-spacing: 0.8px;
 }
 
-.main-nav__link {
-  position: relative;
-  user-select: none;
-}
-
 .main-nav__link::before {
   content: "";
   position: absolute;
