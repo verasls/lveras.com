@@ -18,7 +18,7 @@ export function Projects() {
       <p className="text">
         Some of my data science work is in the form of academic publications. If
         you are interested in my scientific papers, check them out{" "}
-        <HashLink className="link" to="/publications#publications">
+        <HashLink className="anchor" to="/publications#publications">
           here
         </HashLink>
         .

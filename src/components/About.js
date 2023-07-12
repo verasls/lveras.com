@@ -35,7 +35,7 @@ export function About() {
         <p className="text">
           These are my main areas of work. Feel free to{" "}
           <NavHashLink
-            className="link"
+            className="anchor"
             to="/#contact"
             smooth={true}
             duration={500}
