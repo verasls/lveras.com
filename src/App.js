@@ -15,12 +15,19 @@ export function App() {
   const [isOnPublicationsPage, setOnPublicationsPage] = useState(false);
   const [isOnNotFoundPage, setOnNotFoundPage] = useState(false);
 
+  const scrollWithOffset = (el) => {
+    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+    const yOffset = -50;
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
+  };
+
   return (
     <BrowserRouter>
       <Header
         isHeaderSticky={isHeaderSticky}
         isOnPublicationsPage={isOnPublicationsPage}
         isOnNotFoundPage={isOnNotFoundPage}
+        scrollWithOffset={scrollWithOffset}
       />
       <main>
         <Routes>
@@ -30,6 +37,7 @@ export function App() {
               <Home
                 isHeaderSticky={isHeaderSticky}
                 setHeaderSticky={setHeaderSticky}
+                scrollWithOffset={scrollWithOffset}
               />
             }
           />

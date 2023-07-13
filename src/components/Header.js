@@ -17,6 +17,7 @@ export function Header({
   isHeaderSticky,
   isOnPublicationsPage,
   isOnNotFoundPage,
+  scrollWithOffset,
 }) {
   const [isMobile, setMobile] = useState(false);
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);
@@ -49,6 +50,7 @@ export function Header({
         isHeaderSticky={isHeaderSticky}
         isOnPublicationsPage={isOnPublicationsPage}
         isOnNotFoundPage={isOnNotFoundPage}
+        scrollWithOffset={scrollWithOffset}
       />
       {/* {!isMobile ? ( */}
       {/*   <SiteOptions */}
@@ -86,14 +88,9 @@ function MainNav({
   isHeaderSticky,
   isOnPublicationsPage,
   isOnNotFoundPage,
+  scrollWithOffset,
 }) {
   const handleClick = () => setMobileNavOpen(!isMobileNavOpen);
-
-  const scrollWithOffset = (el) => {
-    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
-    const yOffset = -50;
-    window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
-  };
 
   return (
     <nav className="main-nav">

@@ -8,7 +8,7 @@ import { Contact } from "../components/Contact";
 
 import "../styles/general.css";
 
-export function Home({ isHeaderSticky, setHeaderSticky }) {
+export function Home({ isHeaderSticky, setHeaderSticky, scrollWithOffset }) {
   const handleScroll = useCallback(() => {
     const heroSection = document.getElementById("hero");
     const scrollPosition = window.pageYOffset;
@@ -25,7 +25,7 @@ export function Home({ isHeaderSticky, setHeaderSticky }) {
   return (
     <>
       <Hero isHeaderSticky={isHeaderSticky} />
-      <About />
+      <About scrollWithOffset={scrollWithOffset} />
       <Tools />
       <Projects />
       <Contact />

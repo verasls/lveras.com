@@ -8,7 +8,7 @@ import { NavHashLink } from "react-router-hash-link";
 
 import "./About.css";
 
-export function About() {
+export function About({ scrollWithOffset }) {
   const aboutData = [
     {
       title: "Sport scientist",
@@ -39,6 +39,7 @@ export function About() {
             to="/#contact"
             smooth={true}
             duration={500}
+            scroll={(el) => scrollWithOffset(el)}
           >
             reach out
           </NavHashLink>{" "}
