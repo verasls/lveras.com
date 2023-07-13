@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { supabase } from "../supabaseClient";
+import emailjs from "@emailjs/browser";
 
 import "./Contact.css";
 
@@ -35,26 +35,23 @@ function ContactForm() {
   const [isSuccessful, setSuccessful] = useState(true);
   const [isModalOpen, setModalOpen] = useState(false);
 
+  const formRef = useRef();
   const submitButtonRef = useRef(null);
 
-  const onSubmit = async (data) => {
-    const { name, email, message } = data;
-
+  const onSubmit = async () => {
     try {
       setSubmitting(true);
 
-      const { error } = await supabase
-        .from("contact-me")
-        .insert([{ name, email, message }]);
+      await emailjs.sendForm(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+      );
 
-      if (error) {
-        setSuccessful(false);
-        setModalOpen(true);
-      } else {
-        reset();
-        setSuccessful(true);
-        setModalOpen(true);
-      }
+      reset();
+      setSuccessful(true);
+      setModalOpen(true);
     } catch (error) {
       setSuccessful(false);
       setModalOpen(true);
@@ -76,7 +73,12 @@ function ContactForm() {
   );
 
   return (
-    <form className="contact-form" onSubmit={handleSubmit(onSubmit)} noValidate>
+    <form
+      className="contact-form"
+      ref={formRef}
+      onSubmit={handleSubmit(onSubmit)}
+      noValidate
+    >
       <div className="contact-form__name">
         <label htmlFor="name">Name</label>
         <input
