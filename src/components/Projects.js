@@ -17,9 +17,9 @@ export function Projects() {
 
       <p className="text">
         Some of my data science work is in the form of academic publications. If
-        you are interested in my scientific papers, check them out{" "}
+        you are interested in my scientific papers, check my{" "}
         <HashLink className="anchor" to="/publications#publications">
-          here
+          publications
         </HashLink>
         .
       </p>
