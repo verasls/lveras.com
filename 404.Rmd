@@ -1,9 +1,0 @@
----
-title: "404"  
-pagetitle: "Lucas Veras"
----
-<br/>
-
-Sorry, the page is not here. It's probably my mistake.
-
-Please, contact me at lucasdsveras@gmail.com.

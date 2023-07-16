@@ -1,0 +1,137 @@
+.section-contact {
+  padding: 6.4rem 4.8rem;
+  grid-column: 2;
+}
+
+.contact-form__card {
+  padding: 4.8rem 3.2rem;
+  border-radius: 1rem;
+  box-shadow: 0 1.6rem 4.8rem rgba(0, 0, 0, 0.075);
+}
+
+.contact-form__card p {
+  margin-bottom: 0.8rem;
+}
+
+.contact-form {
+  padding: 4.8rem 4.8rem 0 4.8rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.2rem;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-size: 1.8rem;
+  font-family: inherit;
+  color: inherit;
+  width: 100%;
+  padding: 1.2rem;
+  border: none;
+  background-color: var(--lightest-blue);
+  border-radius: 9px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form span {
+  display: inline-block;
+  color: var(--red);
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding-top: 0.8rem;
+}
+
+.contact-form__textarea {
+  grid-column: 1 / -1;
+}
+
+textarea {
+  resize: none;
+}
+
+.contact-form *:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--logo-blue-2);
+}
+
+.contact__btn {
+  font-weight: 600;
+  font-family: inherit;
+  text-decoration: none;
+  border-radius: 9px;
+
+  border: none;
+  cursor: pointer;
+
+  transition: all 0.3s;
+
+  background-color: var(--logo-blue-2);
+  color: var(--white);
+}
+
+.contact__btn--submit {
+  grid-column: 2 / -1;
+  align-self: end;
+  justify-self: end;
+
+  font-size: 2rem;
+  padding: 0.8rem 3.2rem;
+}
+
+.contact__btn:hover {
+  background-color: var(--logo-blue-1);
+}
+
+.contact-form__modal {
+  background-color: var(--pure-white);
+  padding: 3.2rem;
+  border-radius: 9px;
+  box-shadow: 0 1.6rem 4.8rem rgba(0, 0, 0, 0.075);
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.contact-form__modal:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--logo-blue-2), 0 1.6rem 4.8rem rgba(0, 0, 0, 0.075);
+}
+
+.contact-form__modal.error:focus {
+  box-shadow: 0 0 0 2px var(--red), 0 1.6rem 4.8rem rgba(0, 0, 0, 0.075);
+}
+
+.txt__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 0.8rem;
+}
+
+.modal__txt {
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.btn__container {
+  display: flex;
+  justify-content: center;
+  padding-top: 1.6rem;
+}
+
+.contact__btn--close-modal {
+  font-size: 1.4rem;
+  padding: 0.8rem 1.6rem;
+}

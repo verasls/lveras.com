@@ -1,0 +1,124 @@
+:root {
+  --logo-blue-1: #202859;
+  --logo-blue-2: #2d4f6c;
+  --logo-blue-3: #3d6991;
+  --logo-blue-4: #4d7da6;
+  --light-blue: #d8e1e9;
+  --lightest-blue: #ecf0f4;
+  --link-color: #457195;
+  --dark-gray: #444;
+  --medium-gray: #555;
+  --light-gray: #777;
+  --lightest-gray: #aaa;
+  --pure-black: #000;
+  --white: #f8f9fa;
+  --pure-white: #fff;
+  --red: #f03e3e;
+}
+
+/* Reset -------------------------------------------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* General ------------------------------------------------------------------ */
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--medium-gray);
+}
+
+#root {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr min(1008px, 100%) 1fr;
+}
+
+h2,
+h3 {
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  color: var(--dark-gray);
+}
+
+h2 {
+  font-size: 3.6rem;
+  font-weight: 700;
+  margin-bottom: 3.2rem;
+}
+
+h3 {
+  font-size: 2.4rem;
+  font-weight: 500;
+  margin-bottom: 2.4rem;
+}
+
+.subheading {
+  display: block;
+  color: var(--dark-gray);
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 0.75px;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+}
+
+.text {
+  color: var(--medium-gray);
+  font-size: 1.8rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem;
+}
+
+.text:last-child {
+  margin-bottom: 0;
+}
+
+.anchor {
+  position: relative;
+}
+
+.anchor:link,
+.anchor:visited {
+  text-decoration: none;
+  color: var(--link-color);
+}
+
+.anchor::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--logo-blue-4);
+  transform: scaleX(0);
+  transition: all 0.3s ease;
+}
+
+.anchor:hover::before {
+  transform: scaleX(1);
+}
+
+.monospaced {
+  font-family: "Roboto Mono", monospace;
+}
+
+.semi-bold {
+  font-weight: 600;
+}

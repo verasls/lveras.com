@@ -1,0 +1,104 @@
+.section-hero {
+  padding: 9.6rem 4.8rem;
+  background-color: var(--lightest-blue);
+  grid-column: 2;
+}
+
+.section-hero.sticky {
+  margin-top: 6.4rem;
+}
+
+.hero__item-1 {
+  grid-column: 1;
+  grid-row: 1;
+  background-color: var(--lightest-blue);
+}
+
+.hero__item-2 {
+  grid-column: 3;
+  grid-row: 1;
+  background-color: var(--lightest-blue);
+}
+
+.hero-logo {
+  max-width: 130rem;
+  margin: 5.2rem auto;
+  padding: 0 3.2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.logo__text {
+  font-family: "Bebas Neue", sans-serif !important;
+  text-transform: uppercase;
+  user-select: none;
+  color: var(--pure-black);
+  font-size: 14rem;
+  line-height: 0.8;
+  justify-self: end;
+  margin-bottom: -1.6rem;
+}
+
+.logo__letter {
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.logo__letter:hover {
+  transform: scale(1.1);
+}
+
+.logo__boxes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 0.5rem;
+  justify-self: start;
+}
+
+.box {
+  height: 6rem;
+  width: 6rem;
+  transition: all 0.4s;
+}
+
+.box:hover {
+  transform: scale(1.1);
+}
+
+.box--col1 {
+  background-color: var(--logo-blue-1);
+  grid-column: 1;
+}
+.box--col2 {
+  background-color: var(--logo-blue-2);
+  grid-column: 2;
+}
+
+.box--col3 {
+  background-color: var(--logo-blue-3);
+  grid-column: 3;
+}
+
+.box--col4 {
+  background-color: var(--logo-blue-4);
+  grid-column: 4;
+}
+
+.box--row1 {
+  grid-row: 1;
+}
+
+.box--row2 {
+  grid-row: 2;
+}
+
+.box--row3 {
+  grid-row: 3;
+}
+
+.box--row4 {
+  grid-row: 4;
+}
