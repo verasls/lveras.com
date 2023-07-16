@@ -1,0 +1,47 @@
+.not-found {
+  grid-column: 2;
+  max-width: 130rem;
+  margin: 5.2rem auto;
+  padding: 6.4rem 3.2rem 0 3.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.not-found__numbers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.logo__boxes--404 {
+  grid-template-columns: repeat(3, 1fr) !important;
+  justify-self: center;
+}
+
+.box--404 {
+  height: 4rem;
+  width: 4rem;
+}
+
+.box--row5 {
+  grid-row: 5;
+}
+
+.not-found__txt {
+  color: var(--medium-gray);
+  font-size: 1.8rem;
+  line-height: 1.6;
+}
+
+.not-found__txt p {
+  margin-top: 1.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.not-found__txt p:last-child {
+  margin: 0;
+}
+
+.link {
+  z-index: -1;
+}
