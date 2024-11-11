@@ -35,7 +35,7 @@ export default function MainNav({ navData }: MainNavProps) {
             opacity: 0,
           }));
         }}
-        className="relative flex gap-8"
+        className="relative flex gap-8 uppercase tracking-widest"
       >
         {navData.map((nav) => (
           <NavItem key={nav.name} setPosition={setPosition}>
