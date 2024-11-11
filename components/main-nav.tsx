@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useRef, useState } from "react";
 
 type Position = {
@@ -18,6 +19,7 @@ type MainNavProps = {
 };
 
 export default function MainNav({ navData }: MainNavProps) {
+  const pathname = usePathname();
   const [position, setPosition] = useState<Position>({
     left: 0,
     width: 0,
@@ -37,7 +39,13 @@ export default function MainNav({ navData }: MainNavProps) {
       >
         {navData.map((nav) => (
           <NavItem key={nav.name} setPosition={setPosition}>
-            <Link href={nav.href}>{nav.name}</Link>
+            <Link
+              href={nav.href}
+              data-active={pathname === nav.href}
+              className="relative after:absolute after:-bottom-[6px] after:left-[20%] after:h-[2px] after:w-[60%] after:bg-white after:opacity-0 after:transition-opacity after:content-[''] data-[active='true']:after:opacity-100"
+            >
+              {nav.name}
+            </Link>
           </NavItem>
         ))}
 
