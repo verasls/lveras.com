@@ -15,19 +15,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={geist.className} suppressHydrationWarning>
-      <body className="grid min-h-screen grid-rows-[auto_1fr_auto]">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </ThemeProvider>
-      </body>
-    </html>
+    <>
+      <html lang="en" className={geist.className} suppressHydrationWarning>
+        <body className="grid min-h-screen grid-rows-[auto_1fr_auto]">
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Header />
+            <main>{children}</main>
+            <Footer />
+          </ThemeProvider>
+        </body>
+      </html>
+    </>
   );
 }
