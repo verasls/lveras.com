@@ -12,7 +12,7 @@ const navData = [
 
 export default function Header() {
   return (
-    <header className="flex h-14 w-full items-center justify-between px-6 py-8">
+    <header className="flex w-full items-center justify-between px-6 pb-8 pt-2">
       <Link href="/">
         <Image src={logo} alt="Lucas Veras' logo" width={36} />
       </Link>
