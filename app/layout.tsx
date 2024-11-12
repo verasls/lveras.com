@@ -1,4 +1,5 @@
 import { Geist } from "next/font/google";
+import CommandMenu from "@/components/command-menu";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import ThemeProvider from "@/components/theme-provider";
@@ -27,6 +28,8 @@ export default function RootLayout({
             <Header />
             <main>{children}</main>
             <Footer />
+
+            <CommandMenu />
           </ThemeProvider>
         </body>
       </html>

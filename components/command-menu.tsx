@@ -95,79 +95,70 @@ export default function CommandMenu() {
   ];
 
   return (
-    <>
-      <p className="text-sm font-medium">
-        Press{" "}
-        <kbd className="pointer-events-none inline-flex h-5 select-none items-center justify-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
-          <span className="text-sm">⌘</span>K
-        </kbd>{" "}
-        to start
-      </p>
-      <CommandDialog open={open} onOpenChange={setOpen}>
-        <DialogTitle className="hidden">Command menu</DialogTitle>
-        <DialogDescription className="hidden">
-          Command menu with shortcuts to website actions
-        </DialogDescription>
+    <CommandDialog open={open} onOpenChange={setOpen}>
+      <DialogTitle className="hidden">Command menu</DialogTitle>
+      <DialogDescription className="hidden">
+        Command menu with shortcuts to website actions
+      </DialogDescription>
 
-        <CommandInput placeholder="Type a command or search..." />
-        <CommandList>
-          <CommandEmpty>No results found.</CommandEmpty>
+      <CommandInput placeholder="Type a command or search..." />
+      <CommandList>
+        <CommandEmpty>No results found.</CommandEmpty>
 
-          <CommandGroup heading="General">
-            {generalActions.map((action) => (
-              <CommandItem
-                key={action.name}
-                onSelect={() => {
-                  action.action();
-                  setOpen((open) => !open);
-                }}
-              >
-                {action.icon}
-                <span>{action.name}</span>
-                <CommandShortcut>
-                  <div className="flex gap-[2px]">
-                    {action.shortcut.map((shortcut) => (
-                      <span
-                        key={`${action.name}-${shortcut}`}
-                        className="inline-flex h-5 items-center justify-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100"
-                      >
-                        {shortcut}
-                      </span>
-                    ))}
-                  </div>
-                </CommandShortcut>
-              </CommandItem>
-            ))}
-          </CommandGroup>
+        <CommandGroup heading="General">
+          {generalActions.map((action) => (
+            <CommandItem
+              key={action.name}
+              onSelect={() => {
+                action.action();
+                setOpen((open) => !open);
+              }}
+            >
+              {action.icon}
+              <span>{action.name}</span>
+              <CommandShortcut>
+                <div className="flex gap-[2px]">
+                  {action.shortcut.map((shortcut) => (
+                    <span
+                      key={`${action.name}-${shortcut}`}
+                      className="inline-flex h-5 items-center justify-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100"
+                    >
+                      {shortcut}
+                    </span>
+                  ))}
+                </div>
+              </CommandShortcut>
+            </CommandItem>
+          ))}
+        </CommandGroup>
 
-          <CommandGroup heading="Go to">
-            {goToActions.map((action) => (
-              <CommandItem
-                key={action.name}
-                onSelect={() => {
-                  action.action();
-                  setOpen((open) => !open);
-                }}
-              >
-                {action.icon}
-                <span>{action.name}</span>
-                <CommandShortcut>
-                  <div className="flex gap-[2px]">
-                    {action.shortcut.map((shortcut) => (
-                      <span
-                        key={`${action.name}-${shortcut}`}
-                        className="inline-flex h-5 items-center justify-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100"
-                      >
-                        {shortcut}
-                      </span>
-                    ))}
-                  </div>
-                </CommandShortcut>
-              </CommandItem>
-            ))}
-          </CommandGroup>
-        </CommandList>
-      </CommandDialog>
-    </>
+        <CommandGroup heading="Go to">
+          {goToActions.map((action) => (
+            <CommandItem
+              key={action.name}
+              onSelect={() => {
+                action.action();
+                setOpen((open) => !open);
+              }}
+            >
+              {action.icon}
+              <span>{action.name}</span>
+              <CommandShortcut>
+                <div className="flex gap-[2px]">
+                  {action.shortcut.map((shortcut) => (
+                    <span
+                      key={`${action.name}-${shortcut}`}
+                      className="inline-flex h-5 items-center justify-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100"
+                    >
+                      {shortcut}
+                    </span>
+                  ))}
+                </div>
+              </CommandShortcut>
+            </CommandItem>
+          ))}
+        </CommandGroup>
+      </CommandList>
+    </CommandDialog>
   );
 }
