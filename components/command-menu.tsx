@@ -2,6 +2,7 @@
 
 import {
   BookText,
+  CircleCheck,
   Code,
   House,
   Link,
@@ -21,6 +22,7 @@ import {
   CommandShortcut,
 } from "@/components/ui/command";
 import { DialogDescription, DialogTitle } from "@/components/ui/dialog";
+import { useToast } from "@/hooks/use-toast";
 
 type CommandAction = {
   name: string;
@@ -31,6 +33,7 @@ type CommandAction = {
 
 export default function CommandMenu() {
   const router = useRouter();
+  const { toast } = useToast();
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -50,7 +53,22 @@ export default function CommandMenu() {
       name: "Copy",
       shortcut: ["L"],
       icon: <Link />,
-      action: () => navigator.clipboard.writeText(window.location.href),
+      action: () => {
+        navigator.clipboard.writeText(window.location.href);
+        toast({
+          description: (
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center gap-2">
+                <div className="text-foreground">
+                  <CircleCheck className="h-4 w-4 text-green-700" />
+                </div>
+                <span className="font-medium">Copied!</span>
+              </div>
+              <p>You can now share wherever you like.</p>
+            </div>
+          ),
+        });
+      },
     },
     {
       name: "View source",

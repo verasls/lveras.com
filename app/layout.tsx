@@ -3,6 +3,7 @@ import CommandMenu from "@/components/command-menu";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import ThemeProvider from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
 
 const geist = Geist({
@@ -30,6 +31,7 @@ export default function RootLayout({
             <Footer />
 
             <CommandMenu />
+            <Toaster />
           </ThemeProvider>
         </body>
       </html>
