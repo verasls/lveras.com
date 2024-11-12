@@ -1,3 +1,5 @@
+import CommandMenu from "@/components/command-menu";
+
 export default function Page() {
   return (
     <div className="mx-auto flex h-[calc(100vh-80px-64px)] max-w-3xl flex-1 items-center justify-start px-6">
@@ -6,7 +8,8 @@ export default function Page() {
         <p className="text-base">
           PhD candidate in Physical Activity and Health
         </p>
-        <p>Faculty of Sport, University of Porto</p>
+        <p className="mb-8">Faculty of Sport, University of Porto</p>
+        <CommandMenu />
       </div>
     </div>
   );
