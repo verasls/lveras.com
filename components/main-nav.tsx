@@ -42,7 +42,7 @@ export default function MainNav({ navData }: MainNavProps) {
             <Link
               href={nav.href}
               data-active={pathname === nav.href}
-              className="relative after:absolute after:-bottom-[6px] after:left-[20%] after:h-[2px] after:w-[60%] after:bg-white after:opacity-0 after:transition-opacity after:content-[''] data-[active='true']:after:opacity-100"
+              className="relative after:absolute after:-bottom-[6px] after:left-[20%] after:h-[2px] after:w-[60%] after:bg-foreground after:opacity-0 after:transition-opacity after:content-[''] data-[active='true']:after:opacity-100"
             >
               {nav.name}
             </Link>
@@ -77,7 +77,7 @@ function NavItem({ children, setPosition }: NavItemProps) {
           opacity: 1,
         });
       }}
-      className="relative z-10 block px-3 text-sm font-medium text-white mix-blend-difference"
+      className="relative z-10 block px-3 text-sm font-medium"
     >
       {children}
     </li>
@@ -92,7 +92,7 @@ function Cursor({ position }: CursorProps) {
   return (
     <motion.li
       animate={{ ...position, top: "50%", transform: "translateY(-50%)" }}
-      className="absolute z-0 h-8 rounded bg-black"
+      className="absolute z-0 h-8 rounded bg-accent"
     />
   );
 }

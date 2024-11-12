@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <>
       <html lang="en" className={geist.className} suppressHydrationWarning>
-        <body className="grid min-h-screen grid-rows-[auto_1fr_auto]">
+        <body className="grid min-h-screen grid-rows-[auto_1fr_auto] bg-background">
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
