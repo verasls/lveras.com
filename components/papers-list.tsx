@@ -1,17 +1,12 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { cn } from "@/lib/utils";
+import { AnimatedCursor } from "@/components/animated-cursor";
 import { badgeVariants } from "@/components/ui/badge";
 import { Paper } from "@/app/papers/papers-data";
-
-type Position = {
-  top: number;
-  height: number;
-  opacity: number;
-};
+import { useAnimatedCursor } from "@/hooks/use-animated-cursor";
 
 type PapersListProps = {
   papers: Array<Paper>;
@@ -66,34 +61,23 @@ type PapersPerYearProps = {
 };
 
 function PapersPerYear({ year, papers }: PapersPerYearProps) {
-  const [position, setPosition] = useState<Position>({
-    top: 0,
-    height: 0,
-    opacity: 0,
-  });
+  const { position, updatePosition, resetPosition } =
+    useAnimatedCursor("vertical");
 
   return (
     <div>
       <h3 className="mb-2 text-lg font-bold">{year}</h3>
 
-      <ul
-        onMouseLeave={() => {
-          setPosition((previousPosition) => ({
-            ...previousPosition,
-            opacity: 0,
-          }));
-        }}
-        className="relative flex flex-col gap-4"
-      >
+      <ul onMouseLeave={resetPosition} className="relative flex flex-col gap-4">
         {papers.map((paper) => (
           <PapersListItem
             key={paper.id}
             paper={paper}
-            setPosition={setPosition}
+            updatePosition={updatePosition}
           />
         ))}
 
-        <Cursor position={position} />
+        <AnimatedCursor position={position} orientation="vertical" />
       </ul>
     </div>
   );
@@ -101,28 +85,17 @@ function PapersPerYear({ year, papers }: PapersPerYearProps) {
 
 type PapersListItemProps = {
   paper: Paper;
-  setPosition: React.Dispatch<React.SetStateAction<Position>>;
+  updatePosition: (element: HTMLElement) => void;
 };
 
-function PapersListItem({ paper, setPosition }: PapersListItemProps) {
+function PapersListItem({ paper, updatePosition }: PapersListItemProps) {
   const ref = useRef<HTMLLIElement>(null);
 
   return (
     <li
       key={paper.id}
       ref={ref}
-      onMouseEnter={() => {
-        if (!ref.current) return;
-
-        const { height, top } = ref.current.getBoundingClientRect();
-        const offsetTop = ref.current.offsetTop;
-
-        setPosition({
-          top: offsetTop,
-          height: height,
-          opacity: 1,
-        });
-      }}
+      onMouseEnter={() => ref.current && updatePosition(ref.current)}
       className="relative z-10 flex flex-col gap-2 rounded-md p-4"
     >
       <h4 className="text-lg font-semibold">{paper.title}</h4>
@@ -178,18 +151,5 @@ function PapersListItem({ paper, setPosition }: PapersListItemProps) {
         ) : null}
       </div>
     </li>
-  );
-}
-
-type CursorProps = {
-  position: Position;
-};
-
-function Cursor({ position }: CursorProps) {
-  return (
-    <motion.li
-      animate={{ ...position, left: "0", transform: "translateX(0)" }}
-      className="absolute z-0 w-full rounded-md bg-accent"
-    />
   );
 }

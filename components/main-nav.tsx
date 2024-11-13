@@ -1,15 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useRef, useState } from "react";
-
-type Position = {
-  left: number;
-  width: number;
-  opacity: number;
-};
+import React, { useRef } from "react";
+import { AnimatedCursor } from "@/components/animated-cursor";
+import { useAnimatedCursor } from "@/hooks/use-animated-cursor";
 
 type MainNavProps = {
   navData: Array<{
@@ -20,25 +15,17 @@ type MainNavProps = {
 
 export default function MainNav({ navData }: MainNavProps) {
   const pathname = usePathname();
-  const [position, setPosition] = useState<Position>({
-    left: 0,
-    width: 0,
-    opacity: 0,
-  });
+  const { position, updatePosition, resetPosition } =
+    useAnimatedCursor("horizontal");
 
   return (
     <nav>
       <ul
-        onMouseLeave={() => {
-          setPosition((previousPosition) => ({
-            ...previousPosition,
-            opacity: 0,
-          }));
-        }}
+        onMouseLeave={resetPosition}
         className="relative flex gap-8 uppercase tracking-widest"
       >
         {navData.map((nav) => (
-          <NavItem key={nav.name} setPosition={setPosition}>
+          <NavItem key={nav.name} updatePosition={updatePosition}>
             <Link
               href={nav.href}
               data-active={pathname === nav.href}
@@ -49,7 +36,11 @@ export default function MainNav({ navData }: MainNavProps) {
           </NavItem>
         ))}
 
-        <Cursor position={position} />
+        <AnimatedCursor
+          position={position}
+          orientation="horizontal"
+          className="data-[orientation='horizontal']:h-8"
+        />
       </ul>
     </nav>
   );
@@ -57,42 +48,19 @@ export default function MainNav({ navData }: MainNavProps) {
 
 type NavItemProps = {
   children: React.ReactNode;
-  setPosition: React.Dispatch<React.SetStateAction<Position>>;
+  updatePosition: (element: HTMLElement) => void;
 };
 
-function NavItem({ children, setPosition }: NavItemProps) {
+function NavItem({ children, updatePosition }: NavItemProps) {
   const ref = useRef<HTMLLIElement>(null);
 
   return (
     <li
       ref={ref}
-      onMouseEnter={() => {
-        if (!ref.current) return;
-
-        const { width } = ref.current.getBoundingClientRect();
-
-        setPosition({
-          left: ref.current.offsetLeft,
-          width: width,
-          opacity: 1,
-        });
-      }}
+      onMouseEnter={() => ref.current && updatePosition(ref.current)}
       className="relative z-10 block px-3 text-sm font-medium"
     >
       {children}
     </li>
-  );
-}
-
-type CursorProps = {
-  position: Position;
-};
-
-function Cursor({ position }: CursorProps) {
-  return (
-    <motion.li
-      animate={{ ...position, top: "50%", transform: "translateY(-50%)" }}
-      className="absolute z-0 h-8 rounded-md bg-accent"
-    />
   );
 }
