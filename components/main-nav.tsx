@@ -92,7 +92,7 @@ function Cursor({ position }: CursorProps) {
   return (
     <motion.li
       animate={{ ...position, top: "50%", transform: "translateY(-50%)" }}
-      className="absolute z-0 h-8 rounded bg-accent"
+      className="absolute z-0 h-8 rounded-md bg-accent"
     />
   );
 }
