@@ -42,7 +42,7 @@ export default function MainNav({ navData }: MainNavProps) {
             <Link
               href={nav.href}
               data-active={pathname === nav.href}
-              className="relative after:absolute after:-bottom-[6px] after:left-[20%] after:h-[2px] after:w-[60%] after:bg-foreground after:opacity-0 after:transition-opacity after:content-[''] data-[active='true']:after:opacity-100"
+              className="relative after:absolute after:-bottom-[6px] after:left-[20%] after:h-[2px] after:w-[60%] after:bg-foreground after:opacity-0 after:transition-opacity after:content-[''] after:focus-visible:hidden data-[active='true']:after:opacity-100"
             >
               {nav.name}
             </Link>
