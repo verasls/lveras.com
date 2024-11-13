@@ -13,14 +13,17 @@ const navData = [
 
 export default function Header() {
   return (
-    <header className="flex w-full items-center justify-between px-3 pb-8 pt-2">
-      <Button asChild variant="ghost" size="icon">
-        <Link href="/">
-          <Image src={logo} alt="Lucas Veras' logo" width={24} />
-        </Link>
-      </Button>
-      <MainNav navData={navData} />
-      <ThemeToggle />
-    </header>
+    <>
+      <header className="fixed left-0 top-0 z-50 flex w-full items-center justify-between bg-background/90 px-3 pb-8 pt-2">
+        <Button asChild variant="ghost" size="icon">
+          <Link href="/">
+            <Image src={logo} alt="Lucas Veras' logo" width={24} />
+          </Link>
+        </Button>
+        <MainNav navData={navData} />
+        <ThemeToggle />
+      </header>
+      <div className="h-20" />
+    </>
   );
 }
