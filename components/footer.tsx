@@ -9,7 +9,13 @@ export default function Footer() {
         <Mail className="h-4 w-4 opacity-0 transition-all duration-200 group-hover:opacity-100" />
       </div>
       <div className="group flex items-center gap-[3px] hover:font-medium">
-        <Link href="https://github.com/verasls">github</Link>
+        <Link
+          href="https://github.com/verasls"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          github
+        </Link>
         <Github className="h-4 w-4 opacity-0 transition-all duration-200 group-hover:opacity-100" />
       </div>
     </footer>
