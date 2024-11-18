@@ -21,9 +21,9 @@ export default async function Page() {
         Software
       </h1>
       <p>
-        I'm enthusiastic about side projects—sometimes more than I should be!
-        These projects are one of my favorite ways to learn, and I often jump
-        from one to the next. Here are a few featured projects, but you can
+        I&apos;m enthusiastic about side projects—sometimes more than I should
+        be! These projects are one of my favorite ways to learn, and I often
+        jump from one to the next. Here are a few featured projects, but you can
         explore them all on my{" "}
         <Link
           href="https://github.com/verasls?tab=repositories"
