@@ -16,7 +16,7 @@ export default function Header() {
     <>
       <header className="fixed left-0 top-0 z-50 flex w-full items-center justify-between bg-background/90 px-3 pb-8 pt-2">
         <Button asChild variant="ghost" size="icon">
-          <Link href="/">
+          <Link href="/" className="select-none">
             <Image src={logo} alt="Lucas Veras' logo" width={24} />
           </Link>
         </Button>
